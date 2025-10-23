@@ -35,31 +35,31 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/40" />
+      <section className="relative h-[700px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         <img
           src={heroImage}
           alt="Industrial pipes and irrigation"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl space-y-6 animate-fade-in-up">
-            <div className="inline-flex items-center space-x-3 bg-primary/90 px-6 py-3 rounded-full">
-              <span className="text-3xl font-bold text-primary-foreground">INNOVACIÓN</span>
-              <span className="px-4 py-1 bg-primary-foreground text-primary rounded-full text-xl font-bold">
+          <div className="max-w-2xl space-y-8 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-4 bg-primary/90 px-8 py-4 rounded-full">
+              <span className="text-4xl md:text-5xl font-bold text-primary-foreground">INNOVACIÓN</span>
+              <span className="px-6 py-2 bg-primary-foreground text-primary rounded-full text-2xl md:text-3xl font-bold">
                 EN
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg">
               Tuberías y proyectos para el agro, la industria y la minería
             </h1>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6">
                 <Link to="/catalogo">
-                  Ver Catálogo <ArrowRight className="ml-2 h-5 w-5" />
+                  Ver Catálogo <ArrowRight className="ml-2 h-6 w-6" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/90 hover:bg-white">
+              <Button asChild size="lg" variant="outline" className="bg-white/90 hover:bg-white text-lg px-8 py-6">
                 <Link to="/contacto">Contáctanos</Link>
               </Button>
             </div>
@@ -119,20 +119,23 @@ const Home = () => {
             Asegurando siempre la mejor calidad
           </p>
           <div className="relative max-w-5xl mx-auto">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden" id="brands-carousel">
               <div className="flex gap-6 animate-[scroll_20s_linear_infinite] hover:[animation-play-state:paused]">
                 {[...brands, ...brands].map((brand, index) => (
-                  <a
+                  <button
                     key={index}
-                    href={brand.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => {
+                      const carousel = document.getElementById('brands-carousel');
+                      const brandWidth = 280; // w-64 + gap
+                      const scrollPosition = (index % brands.length) * brandWidth;
+                      carousel?.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+                    }}
                     className="flex-shrink-0 w-64"
                   >
                     <Card className="p-8 h-32 flex items-center justify-center hover:shadow-lg transition-all hover:scale-105 bg-white border-border cursor-pointer">
                       <span className="text-2xl font-bold text-muted-foreground">{brand.name}</span>
                     </Card>
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>
@@ -141,13 +144,13 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-brand-cyan/30">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Necesitas asesoría personalizada?</h2>
-          <p className="text-lg mb-8 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-muted-foreground">¿Necesitas asesoría personalizada?</h2>
+          <p className="text-lg mb-8 text-muted-foreground">
             Nuestro equipo de expertos está listo para ayudarte con tu proyecto
           </p>
-          <Button asChild size="lg" variant="secondary">
+          <Button asChild size="lg" variant="default">
             <Link to="/contacto">Habla con un experto</Link>
           </Button>
         </div>

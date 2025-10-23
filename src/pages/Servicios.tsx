@@ -15,42 +15,42 @@ const Servicios = () => {
     {
       icon: ClipboardCheck,
       title: "Elaboración de plantas de tratamiento de agua",
-      description: "Diseño e implementación de sistemas de purificación",
+      description: "Diseñamos e implementamos sistemas completos de purificación y tratamiento de agua para uso industrial, agrícola y comunitario. Nuestras soluciones garantizan agua de calidad cumpliendo con estándares nacionales e internacionales.",
     },
     {
       icon: Wrench,
       title: "Venta de tubería polietileno",
-      description: "Distribución de tubería de alta calidad",
+      description: "Distribuimos tubería de polietileno de alta densidad (HDPE) y baja densidad (LDPE) de las mejores marcas. Ideal para sistemas de riego, conducción de agua potable, minería y aplicaciones industriales con garantía de durabilidad.",
     },
     {
       icon: Wrench,
       title: "Elaboración de Sistemas de bombeo solar",
-      description: "Soluciones sustentables de bombeo",
+      description: "Implementamos sistemas de bombeo impulsados por energía solar, una solución sustentable y eficiente para zonas rurales sin acceso a red eléctrica. Reducimos costos operativos y contribuimos al medio ambiente.",
     },
     {
       icon: Wrench,
       title: "Elaboración de sistemas de riegos",
-      description: "Diseño e instalación de sistemas de irrigación",
+      description: "Diseñamos e instalamos sistemas de riego por goteo, aspersión y microaspersión personalizados. Optimizamos el uso del agua y maximizamos la productividad de cultivos con tecnología de punta.",
     },
     {
       icon: Truck,
       title: "Elaboración de fumiductos",
-      description: "Sistemas especializados de fumigación",
+      description: "Desarrollamos sistemas especializados para la distribución y aplicación de agroquímicos de manera segura y eficiente. Minimizamos pérdidas y garantizamos una aplicación uniforme en cultivos.",
     },
     {
       icon: HeadphonesIcon,
       title: "Elaboración de acueductos veredales",
-      description: "Proyectos de abastecimiento de agua rural",
+      description: "Ejecutamos proyectos integrales de abastecimiento de agua para comunidades rurales. Desde la captación hasta la distribución, mejorando la calidad de vida de las poblaciones veredales.",
     },
     {
       icon: GraduationCap,
       title: "Proyectos agrícolas y ganaderos",
-      description: "Soluciones integrales para el sector agropecuario",
+      description: "Ofrecemos soluciones completas para el sector agropecuario: desde sistemas de riego y bebederos hasta infraestructura para manejo de cultivos y ganado. Aumentamos la productividad de su operación.",
     },
     {
       icon: FileCheck,
       title: "Venta de accesorios rápidos para tubería",
-      description: "Amplia gama de conexiones y accesorios",
+      description: "Amplio inventario de accesorios, conexiones, válvulas y herrajes para instalaciones rápidas y confiables. Compatible con todas las marcas líderes del mercado, facilitando la instalación y mantenimiento.",
     },
   ];
 
@@ -75,14 +75,17 @@ const Servicios = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 bg-gradient-to-br from-white to-brand-cyan/5">
                   <CardHeader>
-                    <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="h-7 w-7 text-primary" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-brand-cyan rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription className="text-base">{service.description}</CardDescription>
+                    <CardTitle className="text-xl mb-3 group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
                   </CardHeader>
+                  <CardContent>
+                    <div className="w-full h-1 bg-gradient-to-r from-primary to-brand-cyan rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </CardContent>
                 </Card>
               );
             })}

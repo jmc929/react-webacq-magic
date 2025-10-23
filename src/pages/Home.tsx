@@ -22,20 +22,25 @@ const Home = () => {
   };
 
   const brands = [
-    { name: "Wiplast", alt: "Logo Wiplast" },
-    { name: "Poelsan", alt: "Logo Poelsan" },
-    { name: "Altamira Water", alt: "Logo Altamira" },
+    { name: "Wiplast", alt: "Logo Wiplast", url: "https://wiplast.com" },
+    { name: "Poelsan", alt: "Logo Poelsan", url: "https://poelsan.com" },
+    { name: "Altamira Water", alt: "Logo Altamira", url: "https://altamirawater.com" },
+    { name: "Plastigama", alt: "Logo Plastigama", url: "https://plastigama.com" },
+    { name: "Amanco", alt: "Logo Amanco", url: "https://amanco.com" },
+    { name: "Pavco", alt: "Logo Pavco", url: "https://pavco.com.co" },
+    { name: "Tigre", alt: "Logo Tigre", url: "https://tigre.com.co" },
+    { name: "Matco", alt: "Logo Matco", url: "https://matco.com.co" },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 hero-gradient opacity-90" />
+        <div className="absolute inset-0 bg-black/40" />
         <img
           src={heroImage}
           alt="Industrial pipes and irrigation"
-          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl space-y-6 animate-fade-in-up">
@@ -105,27 +110,32 @@ const Home = () => {
       </section>
 
       {/* Brands Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-brand-cyan/20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
+          <h2 className="text-3xl font-bold text-center mb-4 text-muted-foreground">
             Marcas con las que Trabajamos
           </h2>
-          <p className="text-center text-brand-gray mb-12 text-lg">
+          <p className="text-center text-muted-foreground mb-12 text-lg">
             Asegurando siempre la mejor calidad
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {brands.map((brand, index) => (
-              <Card
-                key={index}
-                className="p-8 flex items-center justify-center hover:shadow-lg transition-shadow bg-card border-border"
-              >
-                <div className="text-center space-y-2">
-                  <div className="h-20 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-brand-gray">{brand.name}</span>
-                  </div>
-                </div>
-              </Card>
-            ))}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="overflow-hidden">
+              <div className="flex gap-6 animate-[scroll_20s_linear_infinite] hover:[animation-play-state:paused]">
+                {[...brands, ...brands].map((brand, index) => (
+                  <a
+                    key={index}
+                    href={brand.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 w-64"
+                  >
+                    <Card className="p-8 h-32 flex items-center justify-center hover:shadow-lg transition-all hover:scale-105 bg-white border-border cursor-pointer">
+                      <span className="text-2xl font-bold text-muted-foreground">{brand.name}</span>
+                    </Card>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

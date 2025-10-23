@@ -14,75 +14,43 @@ const Servicios = () => {
   const services = [
     {
       icon: ClipboardCheck,
-      title: "Asesoría Técnica",
-      description: "Análisis y recomendaciones para tu proyecto",
-      details: [
-        "Evaluación de necesidades específicas",
-        "Recomendación de productos adecuados",
-        "Cálculo de materiales necesarios",
-        "Planos y especificaciones técnicas",
-        "Optimización de costos",
-      ],
+      title: "Elaboración de plantas de tratamiento de agua",
+      description: "Diseño e implementación de sistemas de purificación",
     },
     {
       icon: Wrench,
-      title: "Instalación Profesional",
-      description: "Equipo especializado en montaje de sistemas",
-      details: [
-        "Personal técnico certificado",
-        "Instalación de sistemas completos",
-        "Pruebas de presión y calidad",
-        "Garantía de instalación",
-        "Cumplimiento de normativas",
-      ],
+      title: "Venta de tubería polietileno",
+      description: "Distribución de tubería de alta calidad",
+    },
+    {
+      icon: Wrench,
+      title: "Elaboración de Sistemas de bombeo solar",
+      description: "Soluciones sustentables de bombeo",
+    },
+    {
+      icon: Wrench,
+      title: "Elaboración de sistemas de riegos",
+      description: "Diseño e instalación de sistemas de irrigación",
     },
     {
       icon: Truck,
-      title: "Logística y Entrega",
-      description: "Distribución eficiente a nivel nacional",
-      details: [
-        "Entregas en todo Colombia",
-        "Seguimiento de pedidos en tiempo real",
-        "Empaque especializado",
-        "Transporte seguro",
-        "Tiempos de entrega garantizados",
-      ],
+      title: "Elaboración de fumiductos",
+      description: "Sistemas especializados de fumigación",
     },
     {
       icon: HeadphonesIcon,
-      title: "Soporte Técnico",
-      description: "Asistencia continua para tus proyectos",
-      details: [
-        "Atención telefónica especializada",
-        "Resolución de dudas técnicas",
-        "Soporte en instalación",
-        "Mantenimiento preventivo",
-        "Disponibilidad en horario comercial",
-      ],
+      title: "Elaboración de acueductos veredales",
+      description: "Proyectos de abastecimiento de agua rural",
     },
     {
       icon: GraduationCap,
-      title: "Capacitación",
-      description: "Formación para uso óptimo de productos",
-      details: [
-        "Talleres prácticos de instalación",
-        "Capacitación en mantenimiento",
-        "Mejores prácticas de la industria",
-        "Certificados de capacitación",
-        "Material didáctico incluido",
-      ],
+      title: "Proyectos agrícolas y ganaderos",
+      description: "Soluciones integrales para el sector agropecuario",
     },
     {
       icon: FileCheck,
-      title: "Garantía y Postventa",
-      description: "Respaldo total en todos nuestros productos",
-      details: [
-        "Garantía de fábrica extendida",
-        "Atención de reclamos ágil",
-        "Reposición de productos defectuosos",
-        "Seguimiento post-instalación",
-        "Asesoría para ampliaciones",
-      ],
+      title: "Venta de accesorios rápidos para tubería",
+      description: "Amplia gama de conexiones y accesorios",
     },
   ];
 
@@ -113,18 +81,8 @@ const Servicios = () => {
                       <Icon className="h-7 w-7 text-primary" />
                     </div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
+                    <CardDescription className="text-base">{service.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {service.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
                 </Card>
               );
             })}

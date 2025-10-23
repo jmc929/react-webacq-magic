@@ -23,10 +23,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <img src={logo} alt="Acquapack Logo" className="h-12 w-12 transition-transform group-hover:scale-110" />
+            <img src={logo} alt="Acquapack Logo" className="h-14 w-14 transition-transform group-hover:scale-110" />
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-primary">ACQUAPACK</span>
-              <span className="text-xs text-brand-gray">S.A.S</span>
+              <span className="text-2xl font-bold text-primary">ACQUAPACK</span>
+              <span className="text-sm text-brand-gray">S.A.S</span>
             </div>
           </Link>
 
@@ -36,7 +36,7 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors relative group ${
+                className={`text-base font-medium transition-colors relative group ${
                   isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
                 }`}
               >

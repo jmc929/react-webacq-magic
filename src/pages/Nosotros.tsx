@@ -17,8 +17,8 @@ const Nosotros = () => {
                 className="relative w-48 h-48 md:w-64 md:h-64 mx-auto object-contain drop-shadow-2xl"
               />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold">ACQUAPACK S.A.S</h1>
-            <p className="text-xl md:text-2xl opacity-90">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">ACQUAPACK S.A.S</h1>
+            <p className="text-2xl md:text-3xl opacity-90">
               Somos líderes en soluciones de tuberías para el sector agrícola, industrial y minero
             </p>
           </div>
@@ -29,14 +29,14 @@ const Nosotros = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-8">
-            <h2 className="text-4xl font-bold mb-6 text-foreground text-center">¿Quiénes Somos?</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <h2 className="text-5xl font-bold mb-6 text-foreground text-center">¿Quiénes Somos?</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
               <strong className="text-primary text-2xl">Acquapack S.A.S</strong> es una empresa colombiana especializada en la
               distribución e instalación de sistemas de tuberías de alta calidad para diferentes sectores industriales.
               Con años de experiencia en el mercado, nos hemos consolidado como un aliado confiable para proyectos
               de agricultura, minería e industria.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               Trabajamos con las mejores marcas del mercado, garantizando productos de primera calidad que cumplen
               con los más altos estándares internacionales. Nuestro compromiso es ofrecer soluciones integrales que
               se adapten a las necesidades específicas de cada cliente.
@@ -48,7 +48,7 @@ const Nosotros = () => {
       {/* Values Section */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
             Nuestros Valores
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -56,8 +56,8 @@ const Nosotros = () => {
               <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
                 <Target className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">Misión</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold text-foreground">Misión</h3>
+              <p className="text-muted-foreground text-base">
                 Proveer soluciones innovadoras en sistemas de tuberías que impulsen el desarrollo sostenible
                 de nuestros clientes en los sectores agrícola, industrial y minero.
               </p>
@@ -67,8 +67,8 @@ const Nosotros = () => {
               <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
                 <Eye className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">Visión</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold text-foreground">Visión</h3>
+              <p className="text-muted-foreground text-base">
                 Ser la empresa líder en Colombia en distribución de sistemas de tuberías, reconocida por nuestra
                 calidad, innovación y compromiso con nuestros clientes.
               </p>
@@ -78,8 +78,8 @@ const Nosotros = () => {
               <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
                 <Award className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">Calidad</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold text-foreground">Calidad</h3>
+              <p className="text-muted-foreground text-base">
                 Trabajamos exclusivamente con marcas certificadas internacionalmente, asegurando productos
                 que cumplen los más altos estándares de calidad y durabilidad.
               </p>
@@ -92,7 +92,7 @@ const Nosotros = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-foreground text-center">
+            <h2 className="text-4xl font-bold mb-8 text-foreground text-center">
               ¿Por qué elegirnos?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -108,7 +108,7 @@ const Nosotros = () => {
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary" />
                   </div>
-                  <p className="text-muted-foreground">{item}</p>
+                  <p className="text-muted-foreground text-base">{item}</p>
                 </div>
               ))}
             </div>
@@ -126,22 +126,22 @@ const Nosotros = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-brand-cyan/20">
-              <h3 className="text-3xl font-bold mb-6 text-primary text-center">Reseña Histórica</h3>
+              <h3 className="text-4xl font-bold mb-6 text-primary text-center">Reseña Histórica</h3>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p className="text-lg">
+                <p className="text-xl">
                   <strong className="text-foreground">ACQUAPACK SAS</strong> nace en el año 2015, tras adquirir la marca de tubería agricominera Wiplas®, 
                   conservando los altos parámetros de calidad, presentación y servicio al cliente que durante más de 20 años caracterizaron la marca. 
                   Posteriormente la compañía apuesta al desarrollo de una nueva línea de trabajo, incursionando en el diseño y ejecución de proyectos 
                   en los diferentes sectores donde hace presencia, invirtiendo en recursos técnicos, humanos y tecnológicos; fortaleciendo nuestro 
                   portafolio de servicios.
                 </p>
-                <p className="text-lg">
+                <p className="text-xl">
                   Actualmente, en concordancia con las políticas de calidad, sustentabilidad, sostenibilidad y buscando un equilibrio entre el 
                   desarrollo económico y ambiental, la compañía decide verticalizar su operación, gestionando la implementación de su propia planta 
                   de procesamiento de materia prima; transformando el material plástico reciclable post industrial en polietileno de baja densidad; 
                   autogestión que le ha brindado mayor calidad a los materiales, independencia y competitividad en el mercado.
                 </p>
-                <p className="text-lg">
+                <p className="text-xl">
                   Es de esta manera como nuestra Compañía <strong className="text-foreground">ACQUAPACK SAS</strong> no sólo ha evolucionado en la mejora de su producto 
                   propio tubería Wiplas®, sino que también se ha propiciado la ampliación de nuestro portafolio de productos y servicios complementarios, 
                   obteniendo exitosos resultados en el proceso de especialización y satisfacción de nuestros grupos de interés.

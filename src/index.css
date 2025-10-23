@@ -115,6 +115,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-size: 18px;
+    line-height: 1.7;
   }
   
   html {

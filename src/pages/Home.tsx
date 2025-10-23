@@ -45,21 +45,21 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl space-y-8 animate-fade-in-up">
             <div className="inline-flex items-center space-x-4 bg-primary/90 px-8 py-4 rounded-full">
-              <span className="text-4xl md:text-5xl font-bold text-primary-foreground">INNOVACIÓN</span>
-              <span className="px-6 py-2 bg-primary-foreground text-primary rounded-full text-2xl md:text-3xl font-bold">
+              <span className="text-5xl md:text-6xl font-bold text-primary-foreground">INNOVACIÓN</span>
+              <span className="px-6 py-2 bg-primary-foreground text-primary rounded-full text-3xl md:text-4xl font-bold">
                 EN
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">
               Tuberías y proyectos para el agro, la industria y la minería
             </h1>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-xl px-10 py-7">
                 <Link to="/catalogo">
-                  Ver Catálogo <ArrowRight className="ml-2 h-6 w-6" />
+                  Ver Catálogo <ArrowRight className="ml-2 h-7 w-7" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/90 hover:bg-white text-lg px-8 py-6">
+              <Button asChild size="lg" variant="outline" className="bg-white/90 hover:bg-white text-xl px-10 py-7">
                 <Link to="/contacto">Contáctanos</Link>
               </Button>
             </div>
@@ -70,7 +70,7 @@ const Home = () => {
       {/* Gallery Section */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Galería</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">Galería</h2>
           <div className="relative max-w-4xl mx-auto">
             <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
               <img
@@ -112,10 +112,10 @@ const Home = () => {
       {/* Brands Section */}
       <section className="py-16 bg-brand-cyan/20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4 text-muted-foreground">
+          <h2 className="text-4xl font-bold text-center mb-4 text-muted-foreground">
             Marcas con las que Trabajamos
           </h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
+          <p className="text-center text-muted-foreground mb-12 text-xl">
             Asegurando siempre la mejor calidad
           </p>
           <div className="relative max-w-5xl mx-auto">
@@ -133,7 +133,7 @@ const Home = () => {
                     className="flex-shrink-0 w-64"
                   >
                     <Card className="p-8 h-32 flex items-center justify-center hover:shadow-lg transition-all hover:scale-105 bg-white border-border cursor-pointer">
-                      <span className="text-2xl font-bold text-muted-foreground">{brand.name}</span>
+                      <span className="text-3xl font-bold text-muted-foreground">{brand.name}</span>
                     </Card>
                   </button>
                 ))}
@@ -146,8 +146,8 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-16 bg-brand-cyan/30">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-muted-foreground">¿Necesitas asesoría personalizada?</h2>
-          <p className="text-lg mb-8 text-muted-foreground">
+          <h2 className="text-4xl font-bold mb-4 text-muted-foreground">¿Necesitas asesoría personalizada?</h2>
+          <p className="text-xl mb-8 text-muted-foreground">
             Nuestro equipo de expertos está listo para ayudarte con tu proyecto
           </p>
           <Button asChild size="lg" variant="default">

@@ -60,8 +60,8 @@ const Servicios = () => {
       <section className="hero-gradient py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Nuestros Servicios</h1>
-            <p className="text-lg md:text-xl opacity-90">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Nuestros Servicios</h1>
+            <p className="text-xl md:text-2xl opacity-90">
               Soluciones integrales para acompañarte en cada etapa de tu proyecto
             </p>
           </div>
@@ -80,8 +80,8 @@ const Servicios = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-primary to-brand-cyan rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl mb-3 group-hover:text-primary transition-colors">{service.title}</CardTitle>
-                    <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
+                    <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                    <CardDescription className="text-lg leading-relaxed">{service.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="w-full h-1 bg-gradient-to-r from-primary to-brand-cyan rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -97,7 +97,7 @@ const Servicios = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+            <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
               Proceso de Trabajo
             </h2>
             <div className="space-y-8">
@@ -133,8 +133,8 @@ const Servicios = () => {
                     {item.step}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <h3 className="text-2xl font-bold mb-2 text-foreground">{item.title}</h3>
+                    <p className="text-muted-foreground text-lg">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -146,8 +146,8 @@ const Servicios = () => {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Listo para comenzar tu proyecto?</h2>
-          <p className="text-lg mb-8 opacity-90">
+          <h2 className="text-4xl font-bold mb-4">¿Listo para comenzar tu proyecto?</h2>
+          <p className="text-xl mb-8 opacity-90">
             Nuestro equipo está preparado para brindarte la mejor solución
           </p>
           <Button asChild size="lg" variant="secondary">

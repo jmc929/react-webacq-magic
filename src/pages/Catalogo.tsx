@@ -66,8 +66,8 @@ const Catalogo = () => {
       <section className="hero-gradient py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Nuestro Catálogo</h1>
-            <p className="text-lg md:text-xl opacity-90">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Nuestro Catálogo</h1>
+            <p className="text-xl md:text-2xl opacity-90">
               Amplia gama de productos para todos los sectores industriales
             </p>
           </div>
@@ -88,25 +88,25 @@ const Catalogo = () => {
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                           <Icon className="h-6 w-6 text-primary" />
                         </div>
-                        <CardTitle className="text-2xl">{category.title}</CardTitle>
-                        <CardDescription className="text-base">{category.description}</CardDescription>
+                        <CardTitle className="text-3xl">{category.title}</CardTitle>
+                        <CardDescription className="text-lg">{category.description}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div>
-                      <h4 className="font-semibold mb-3 text-foreground">Productos:</h4>
+                      <h4 className="font-semibold mb-3 text-foreground text-lg">Productos:</h4>
                       <ul className="space-y-2">
                         {category.products.map((product, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                            <span className="text-muted-foreground">{product}</span>
+                            <span className="text-muted-foreground text-base">{product}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-3 text-foreground">Aplicaciones:</h4>
+                      <h4 className="font-semibold mb-3 text-foreground text-lg">Aplicaciones:</h4>
                       <div className="flex flex-wrap gap-2">
                         {category.applications.map((app, idx) => (
                           <Badge key={idx} variant="secondary">
@@ -127,8 +127,8 @@ const Catalogo = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">Marcas Certificadas</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-4xl font-bold text-foreground">Marcas Certificadas</h2>
+            <p className="text-xl text-muted-foreground">
               Trabajamos con las marcas más reconocidas del mercado: <strong>Wiplast</strong>,{" "}
               <strong>Poelsan</strong> y <strong>Altamira Water</strong>, garantizando productos
               de la más alta calidad y durabilidad.
@@ -151,8 +151,8 @@ const Catalogo = () => {
       {/* CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Necesitas una cotización personalizada?</h2>
-          <p className="text-lg mb-8 opacity-90">
+          <h2 className="text-4xl font-bold mb-4">¿Necesitas una cotización personalizada?</h2>
+          <p className="text-xl mb-8 opacity-90">
             Contáctanos y te ayudaremos a encontrar los productos perfectos para tu proyecto
           </p>
           <Button asChild size="lg" variant="secondary">

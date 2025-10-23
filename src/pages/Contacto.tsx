@@ -38,8 +38,8 @@ const Contacto = () => {
       <section className="hero-gradient py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contáctanos</h1>
-            <p className="text-lg md:text-xl opacity-90">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Contáctanos</h1>
+            <p className="text-xl md:text-2xl opacity-90">
               Estamos aquí para ayudarte con tu proyecto
             </p>
           </div>
@@ -54,8 +54,8 @@ const Contacto = () => {
             <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Envíanos un mensaje</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-3xl">Envíanos un mensaje</CardTitle>
+                  <CardDescription className="text-lg">
                     Completa el formulario y te responderemos a la brevedad
                   </CardDescription>
                 </CardHeader>
@@ -120,7 +120,7 @@ const Contacto = () => {
             <div className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Información de Contacto</CardTitle>
+                  <CardTitle className="text-2xl">Información de Contacto</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <a
@@ -130,7 +130,7 @@ const Contacto = () => {
                     className="flex items-start space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors"
                   >
                     <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
+                    <div className="text-base">
                       <p className="font-medium text-foreground">Dirección</p>
                       <p className="text-muted-foreground">
                         Barrio Perpetuo Socorro
@@ -147,7 +147,7 @@ const Contacto = () => {
                     className="flex items-start space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors"
                   >
                     <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
+                    <div className="text-base">
                       <p className="font-medium text-foreground">Teléfono</p>
                       <p className="text-muted-foreground">317 439 9679</p>
                     </div>
@@ -158,7 +158,7 @@ const Contacto = () => {
                     className="flex items-start space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors"
                   >
                     <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
+                    <div className="text-base">
                       <p className="font-medium text-foreground">Email</p>
                       <p className="text-muted-foreground break-all">
                         acquapack@acquapackcolombia.com
@@ -168,7 +168,7 @@ const Contacto = () => {
 
                   <div className="flex items-start space-x-3 p-3">
                     <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
+                    <div className="text-base">
                       <p className="font-medium text-foreground">Horario</p>
                       <p className="text-muted-foreground">
                         Lunes a Viernes: 8:00 AM - 6:00 PM
@@ -182,7 +182,7 @@ const Contacto = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Redes Sociales</CardTitle>
+                  <CardTitle className="text-2xl">Redes Sociales</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <a
@@ -194,7 +194,7 @@ const Contacto = () => {
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                       <Instagram className="h-5 w-5 text-primary" />
                     </div>
-                    <div className="text-sm">
+                    <div className="text-base">
                       <p className="font-medium text-foreground">Instagram</p>
                       <p className="text-muted-foreground">@acquapack_</p>
                     </div>
@@ -209,7 +209,7 @@ const Contacto = () => {
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                       <MessageCircle className="h-5 w-5 text-primary" />
                     </div>
-                    <div className="text-sm">
+                    <div className="text-base">
                       <p className="font-medium text-foreground">WhatsApp</p>
                       <p className="text-muted-foreground">Envíanos un mensaje</p>
                     </div>
@@ -225,7 +225,7 @@ const Contacto = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+            <h2 className="text-4xl font-bold text-center mb-8 text-foreground">
               Encuéntranos
             </h2>
             <div className="aspect-video rounded-lg overflow-hidden shadow-lg">

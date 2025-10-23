@@ -10,43 +10,43 @@ const Footer = () => {
           {/* Logo y descripción */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <img src={logo} alt="Acquapack Logo" className="h-10 w-10" />
+              <img src={logo} alt="Acquapack Logo" className="h-12 w-12" />
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-primary">ACQUAPACK</span>
-                <span className="text-xs text-brand-gray">S.A.S</span>
+                <span className="text-xl font-bold text-primary">ACQUAPACK</span>
+                <span className="text-sm text-brand-gray">S.A.S</span>
               </div>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               Innovación en tuberías y proyectos para el agro, la industria y la minería.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Links</h3>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/" className="text-base text-muted-foreground hover:text-primary transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/nosotros" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/nosotros" className="text-base text-muted-foreground hover:text-primary transition-colors">
                   Quienes somos
                 </Link>
               </li>
               <li>
-                <Link to="/catalogo" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/catalogo" className="text-base text-muted-foreground hover:text-primary transition-colors">
                   Catálogo
                 </Link>
               </li>
               <li>
-                <Link to="/servicios" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/servicios" className="text-base text-muted-foreground hover:text-primary transition-colors">
                   Servicios
                 </Link>
               </li>
               <li>
-                <Link to="/contacto" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/contacto" className="text-base text-muted-foreground hover:text-primary transition-colors">
                   Contacto
                 </Link>
               </li>
@@ -55,23 +55,23 @@ const Footer = () => {
 
           {/* Contacto */}
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Contacto</h3>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">Contacto</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="tel:3174399679"
-                  className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center space-x-2 text-base text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-5 w-5" />
                   <span>317 439 9679</span>
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:acquapack@acquapackcolombia.com"
-                  className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center space-x-2 text-base text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Mail className="h-4 w-4" />
+                  <Mail className="h-5 w-5" />
                   <span>acquapack@acquapackcolombia.com</span>
                 </a>
               </li>
@@ -80,18 +80,18 @@ const Footer = () => {
 
           {/* Dirección y Redes */}
           <div>
-            <h3 className="font-semibold mb-4 text-foreground">Dirección</h3>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">Dirección</h3>
             <a
               href="https://www.google.com/maps/place/Cl.+35+%2351-11,+La+Candelaria,+Medell%C3%ADn"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-4"
+              className="flex items-start space-x-2 text-base text-muted-foreground hover:text-primary transition-colors mb-4"
             >
-              <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+              <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
               <span>Barrio Perpetuo Socorro, Calle 35 #51-11, Medellín, Antioquia</span>
             </a>
             
-            <h3 className="font-semibold mb-4 text-foreground">Redes Sociales</h3>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">Redes Sociales</h3>
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/acquapack_/"
@@ -100,7 +100,7 @@ const Footer = () => {
                 className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-6 w-6" />
               </a>
               <a
                 href="https://wa.link/dgtbl9"
@@ -109,7 +109,7 @@ const Footer = () => {
                 className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="h-5 w-5" />
+                <MessageCircle className="h-6 w-6" />
               </a>
             </div>
           </div>

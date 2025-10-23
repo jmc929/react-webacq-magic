@@ -5,20 +5,12 @@ import logo from "@/assets/logo.png";
 const Nosotros = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Logo */}
-      <section className="hero-gradient py-32 text-white">
+      {/* Hero Section */}
+      <section className="hero-gradient py-20 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in-up space-y-8">
-            <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan via-primary to-brand-blue blur-3xl opacity-40 animate-pulse"></div>
-              <img 
-                src={logo} 
-                alt="Logo Acquapack" 
-                className="relative w-48 h-48 md:w-64 md:h-64 mx-auto object-contain drop-shadow-2xl"
-              />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold">ACQUAPACK S.A.S</h1>
-            <p className="text-xl md:text-2xl opacity-90">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Sobre Nosotros</h1>
+            <p className="text-lg md:text-xl opacity-90">
               Somos líderes en soluciones de tuberías para el sector agrícola, industrial y minero
             </p>
           </div>
@@ -26,21 +18,65 @@ const Nosotros = () => {
       </section>
 
       {/* Company Info */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <h2 className="text-4xl font-bold mb-6 text-foreground text-center">¿Quiénes Somos?</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-primary text-2xl">Acquapack S.A.S</strong> es una empresa colombiana especializada en la
-              distribución e instalación de sistemas de tuberías de alta calidad para diferentes sectores industriales.
-              Con años de experiencia en el mercado, nos hemos consolidado como un aliado confiable para proyectos
-              de agricultura, minería e industria.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Trabajamos con las mejores marcas del mercado, garantizando productos de primera calidad que cumplen
-              con los más altos estándares internacionales. Nuestro compromiso es ofrecer soluciones integrales que
-              se adapten a las necesidades específicas de cada cliente.
-            </p>
+      <section className="py-20 bg-gradient-to-b from-brand-cyan/10 via-brand-cyan/20 to-brand-blue/10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-brand-cyan to-transparent"></div>
+          <div className="absolute top-32 left-0 w-full h-32 bg-gradient-to-b from-brand-blue/50 to-transparent"></div>
+          <div className="absolute top-64 left-0 w-full h-32 bg-gradient-to-b from-brand-cyan/70 to-transparent"></div>
+        </div>
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
+              <div className="md:w-1/3 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan via-brand-blue to-primary blur-2xl opacity-30 animate-pulse"></div>
+                  <img 
+                    src={logo} 
+                    alt="Logo Acquapack" 
+                    className="relative w-64 h-64 object-contain drop-shadow-2xl"
+                  />
+                </div>
+              </div>
+              <div className="md:w-2/3 space-y-6">
+                <h2 className="text-4xl font-bold mb-6 text-foreground">¿Quiénes Somos?</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  <strong className="text-primary text-2xl">Acquapack S.A.S</strong> es una empresa colombiana especializada en la
+                  distribución e instalación de sistemas de tuberías de alta calidad para diferentes sectores industriales.
+                  Con años de experiencia en el mercado, nos hemos consolidado como un aliado confiable para proyectos
+                  de agricultura, minería e industria.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Trabajamos con las mejores marcas del mercado, garantizando productos de primera calidad que cumplen
+                  con los más altos estándares internacionales. Nuestro compromiso es ofrecer soluciones integrales que
+                  se adapten a las necesidades específicas de cada cliente.
+                </p>
+              </div>
+            </div>
+
+            {/* Historical Review */}
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-brand-cyan/20">
+              <h3 className="text-3xl font-bold mb-6 text-primary">Reseña Histórica</h3>
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p className="text-lg">
+                  <strong className="text-foreground">ACQUAPACK SAS</strong> nace en el año 2015, tras adquirir la marca de tubería agricominera Wiplas®, 
+                  conservando los altos parámetros de calidad, presentación y servicio al cliente que durante más de 20 años caracterizaron la marca. 
+                  Posteriormente la compañía apuesta al desarrollo de una nueva línea de trabajo, incursionando en el diseño y ejecución de proyectos 
+                  en los diferentes sectores donde hace presencia, invirtiendo en recursos técnicos, humanos y tecnológicos; fortaleciendo nuestro 
+                  portafolio de servicios.
+                </p>
+                <p className="text-lg">
+                  Actualmente, en concordancia con las políticas de calidad, sustentabilidad, sostenibilidad y buscando un equilibrio entre el 
+                  desarrollo económico y ambiental, la compañía decide verticalizar su operación, gestionando la implementación de su propia planta 
+                  de procesamiento de materia prima; transformando el material plástico reciclable post industrial en polietileno de baja densidad; 
+                  autogestión que le ha brindado mayor calidad a los materiales, independencia y competitividad en el mercado.
+                </p>
+                <p className="text-lg">
+                  Es de esta manera como nuestra Compañía <strong className="text-foreground">ACQUAPACK SAS</strong> no sólo ha evolucionado en la mejora de su producto 
+                  propio tubería Wiplas®, sino que también se ha propiciado la ampliación de nuestro portafolio de productos y servicios complementarios, 
+                  obteniendo exitosos resultados en el proceso de especialización y satisfacción de nuestros grupos de interés.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -111,42 +147,6 @@ const Nosotros = () => {
                   <p className="text-muted-foreground">{item}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Historical Review */}
-      <section className="py-20 bg-gradient-to-b from-brand-cyan/10 via-brand-cyan/20 to-brand-blue/10 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-brand-cyan to-transparent"></div>
-          <div className="absolute top-32 left-0 w-full h-32 bg-gradient-to-b from-brand-blue/50 to-transparent"></div>
-          <div className="absolute top-64 left-0 w-full h-32 bg-gradient-to-b from-brand-cyan/70 to-transparent"></div>
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-brand-cyan/20">
-              <h3 className="text-3xl font-bold mb-6 text-primary text-center">Reseña Histórica</h3>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p className="text-lg">
-                  <strong className="text-foreground">ACQUAPACK SAS</strong> nace en el año 2015, tras adquirir la marca de tubería agricominera Wiplas®, 
-                  conservando los altos parámetros de calidad, presentación y servicio al cliente que durante más de 20 años caracterizaron la marca. 
-                  Posteriormente la compañía apuesta al desarrollo de una nueva línea de trabajo, incursionando en el diseño y ejecución de proyectos 
-                  en los diferentes sectores donde hace presencia, invirtiendo en recursos técnicos, humanos y tecnológicos; fortaleciendo nuestro 
-                  portafolio de servicios.
-                </p>
-                <p className="text-lg">
-                  Actualmente, en concordancia con las políticas de calidad, sustentabilidad, sostenibilidad y buscando un equilibrio entre el 
-                  desarrollo económico y ambiental, la compañía decide verticalizar su operación, gestionando la implementación de su propia planta 
-                  de procesamiento de materia prima; transformando el material plástico reciclable post industrial en polietileno de baja densidad; 
-                  autogestión que le ha brindado mayor calidad a los materiales, independencia y competitividad en el mercado.
-                </p>
-                <p className="text-lg">
-                  Es de esta manera como nuestra Compañía <strong className="text-foreground">ACQUAPACK SAS</strong> no sólo ha evolucionado en la mejora de su producto 
-                  propio tubería Wiplas®, sino que también se ha propiciado la ampliación de nuestro portafolio de productos y servicios complementarios, 
-                  obteniendo exitosos resultados en el proceso de especialización y satisfacción de nuestros grupos de interés.
-                </p>
-              </div>
             </div>
           </div>
         </div>

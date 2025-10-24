@@ -122,13 +122,10 @@ const Nosotros = () => {
       </section>
 
       {/* Historical Review */}
-      <WaveSection 
-        heightClassName="min-h-[600px] py-20"
-        colors={['#D7ECEF', '#CCE7EC', '#C7E4EA', '#BEE0E7', '#B5DCE4', '#B3DBE3']}
-      >
-        <div className="container mx-auto px-4 relative w-full">
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-brand-cyan/20">
+            <div className="bg-muted/50 rounded-2xl p-8 md:p-12 shadow-lg border border-border">
               <h3 className="text-4xl font-bold mb-6 text-primary text-center">Reseña Histórica</h3>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p className="text-xl">
@@ -153,7 +150,7 @@ const Nosotros = () => {
             </div>
           </div>
         </div>
-      </WaveSection>
+      </section>
     </div>
   );
 };

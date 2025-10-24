@@ -13,16 +13,16 @@ const WaveSection: React.FC<WaveSectionProps> = ({
   heightClassName = "h-[500px] sm:h-[600px]",
   colors = ['#D7ECEF', '#CCE7EC', '#C7E4EA', '#BEE0E7', '#B5DCE4', '#B3DBE3']
 }) => {
-  // Paths de olas basados en el diseño de referencia
+  // Paths de olas distribuidas de arriba hacia abajo formando degradado
   const wavePaths = [
-    "M0,256L60,245.3C120,235,240,213,360,197.3C480,181,600,171,720,186.7C840,203,960,245,1080,261.3C1200,277,1320,267,1380,261.3L1440,256L1440,320L0,320Z",
-    "M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,245.3C672,267,768,277,864,256C960,235,1056,181,1152,170.7C1248,160,1344,192,1392,208L1440,224L1440,320L0,320Z",
-    "M0,256L80,245.3C160,235,320,213,480,186.7C640,160,800,128,960,144C1120,160,1280,224,1360,256L1440,288L1440,320L0,320Z",
-    "M0,288L60,272C120,256,240,224,360,202.7C480,181,600,171,720,181.3C840,192,960,224,1080,240C1200,256,1320,256,1380,256L1440,256L1440,320L0,320Z",
-    "M0,304L48,288C96,272,192,240,288,229.3C384,219,480,229,576,240C672,251,768,261,864,261.3C960,261,1056,251,1152,245.3C1248,240,1344,240,1392,240L1440,240L1440,320L0,320Z"
+    "M0,32L60,37.3C120,43,240,53,360,69.3C480,85,600,107,720,106.7C840,107,960,85,1080,74.7C1200,64,1320,64,1380,64L1440,64L1440,0L0,0Z",
+    "M0,96L48,106.7C96,117,192,139,288,133.3C384,128,480,96,576,74.7C672,53,768,43,864,64C960,85,1056,139,1152,149.3C1248,160,1344,128,1392,112L1440,96L1440,0L0,0Z",
+    "M0,128L80,133.3C160,139,320,149,480,170.7C640,192,800,224,960,213.3C1120,203,1280,149,1360,122.7L1440,96L1440,0L0,0Z",
+    "M0,160L60,170.7C120,181,240,203,360,208C480,213,600,203,720,181.3C840,160,960,128,1080,128C1200,128,1320,160,1380,176L1440,192L1440,0L0,0Z",
+    "M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,240C672,256,768,256,864,245.3C960,235,1056,213,1152,208C1248,203,1344,213,1392,218.7L1440,224L1440,0L0,0Z"
   ];
   
-  const opacities = [1, 0.9, 0.8, 0.7, 0.9];
+  const opacities = [1, 0.9, 0.8, 0.7, 0.6];
 
   return (
     <section 
@@ -30,16 +30,17 @@ const WaveSection: React.FC<WaveSectionProps> = ({
       role="banner"
       aria-label="Hero section with wave background"
     >
-      {/* Capas de ondas SVG */}
+      {/* Capas de ondas SVG distribuidas de arriba hacia abajo */}
       {colors.slice(0, 5).map((color, index) => (
         <svg
           key={index}
-          className="absolute inset-x-0 bottom-0 w-full h-auto z-0"
+          className="absolute inset-x-0 top-0 w-full h-full z-0"
           viewBox="0 0 1440 320"
           preserveAspectRatio="none"
           aria-hidden="true"
           style={{ 
-            opacity: opacities[index]
+            opacity: opacities[index],
+            transform: `translateY(${index * 15}%)` // Distribuir las olas verticalmente
           }}
         >
           <path

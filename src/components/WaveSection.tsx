@@ -13,21 +13,16 @@ const WaveSection: React.FC<WaveSectionProps> = ({
   heightClassName = "h-[360px] sm:h-[420px]",
   colors = ['#D7ECEF', '#CCE7EC', '#C7E4EA', '#BEE0E7', '#B5DCE4', '#B3DBE3']
 }) => {
-  // Definir diferentes formas de ondas para variedad visual
+  // Paths de olas basados en el diseño de referencia
   const wavePaths = [
-    // Onda suave tipo sine
-    "M0,320 C160,240 320,400 480,320 C640,240 800,400 960,320 C1120,240 1280,400 1440,320 L1440,320 L0,320 Z",
-    // Onda con más amplitud
-    "M0,320 C160,200 320,440 480,320 C640,200 800,440 960,320 C1120,200 1280,440 1440,320 L1440,320 L0,320 Z",
-    // Onda más sutil
-    "M0,320 C160,280 320,360 480,320 C640,280 800,360 960,320 C1120,280 1280,360 1440,320 L1440,320 L0,320 Z",
-    // Onda con variación
-    "M0,320 C160,220 320,420 480,320 C640,220 800,420 960,320 C1120,220 1280,420 1440,320 L1440,320 L0,320 Z",
-    // Onda más plana
-    "M0,320 C160,300 320,340 480,320 C640,300 800,340 960,320 C1120,300 1280,340 1440,320 L1440,320 L0,320 Z",
-    // Onda final más pronunciada
-    "M0,320 C160,180 320,460 480,320 C640,180 800,460 960,320 C1120,180 1280,460 1440,320 L1440,320 L0,320 Z"
+    "M0,256L60,245.3C120,235,240,213,360,197.3C480,181,600,171,720,186.7C840,203,960,245,1080,261.3C1200,277,1320,267,1380,261.3L1440,256L1440,320L0,320Z",
+    "M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,245.3C672,267,768,277,864,256C960,235,1056,181,1152,170.7C1248,160,1344,192,1392,208L1440,224L1440,320L0,320Z",
+    "M0,256L80,245.3C160,235,320,213,480,186.7C640,160,800,128,960,144C1120,160,1280,224,1360,256L1440,288L1440,320L0,320Z",
+    "M0,288L60,272C120,256,240,224,360,202.7C480,181,600,171,720,181.3C840,192,960,224,1080,240C1200,256,1320,256,1380,256L1440,256L1440,320L0,320Z",
+    "M0,304L48,288C96,272,192,240,288,229.3C384,219,480,229,576,240C672,251,768,261,864,261.3C960,261,1056,251,1152,245.3C1248,240,1344,240,1392,240L1440,240L1440,320L0,320Z"
   ];
+  
+  const opacities = [1, 0.9, 0.8, 0.7, 0.9];
 
   return (
     <section 
@@ -36,22 +31,20 @@ const WaveSection: React.FC<WaveSectionProps> = ({
       aria-label="Hero section with wave background"
     >
       {/* Capas de ondas SVG */}
-      {colors.map((color, index) => (
+      {colors.slice(0, 5).map((color, index) => (
         <svg
           key={index}
-          className="absolute inset-x-0 bottom-0 w-full h-auto"
+          className="absolute inset-x-0 bottom-0 w-full h-auto z-0"
           viewBox="0 0 1440 320"
           preserveAspectRatio="none"
           aria-hidden="true"
           style={{ 
-            zIndex: index + 1,
-            opacity: 0.85 + (index * 0.02) // Opacidad progresiva: 85% a 95%
+            opacity: opacities[index]
           }}
         >
           <path
-            d={wavePaths[index % wavePaths.length]}
+            d={wavePaths[index]}
             fill={color}
-            fillOpacity="1"
           />
         </svg>
       ))}

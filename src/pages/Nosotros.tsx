@@ -1,12 +1,17 @@
 import { Card } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
 import logo from "@/assets/Logo-Nombre.png";
+import WaveSection from "@/components/WaveSection";
 
 const Nosotros = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Logo */}
-      <section className="hero-gradient py-32 text-white">
+      <WaveSection 
+        heightClassName="h-[500px] sm:h-[600px]"
+        colors={['#D7ECEF', '#CCE7EC', '#C7E4EA', '#BEE0E7', '#B5DCE4', '#B3DBE3']}
+        className="py-32"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up space-y-8">
             <div className="relative inline-block">
@@ -23,7 +28,7 @@ const Nosotros = () => {
             </p>
           </div>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Company Info */}
       <section className="py-20 bg-background">
@@ -117,13 +122,11 @@ const Nosotros = () => {
       </section>
 
       {/* Historical Review */}
-      <section className="py-20 bg-gradient-to-b from-brand-cyan/10 via-brand-cyan/20 to-brand-blue/10 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-brand-cyan to-transparent"></div>
-          <div className="absolute top-32 left-0 w-full h-32 bg-gradient-to-b from-brand-blue/50 to-transparent"></div>
-          <div className="absolute top-64 left-0 w-full h-32 bg-gradient-to-b from-brand-cyan/70 to-transparent"></div>
-        </div>
-        <div className="container mx-auto px-4 relative">
+      <WaveSection 
+        heightClassName="min-h-[600px] py-20"
+        colors={['#D7ECEF', '#CCE7EC', '#C7E4EA', '#BEE0E7', '#B5DCE4', '#B3DBE3']}
+      >
+        <div className="container mx-auto px-4 relative w-full">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-brand-cyan/20">
               <h3 className="text-4xl font-bold mb-6 text-primary text-center">Reseña Histórica</h3>
@@ -150,7 +153,7 @@ const Nosotros = () => {
             </div>
           </div>
         </div>
-      </section>
+      </WaveSection>
     </div>
   );
 };

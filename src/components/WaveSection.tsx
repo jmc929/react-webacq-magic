@@ -10,7 +10,7 @@ interface WaveSectionProps {
 const WaveSection: React.FC<WaveSectionProps> = ({ 
   children, 
   className = "", 
-  heightClassName = "h-[360px] sm:h-[420px]",
+  heightClassName = "h-[500px] sm:h-[600px]",
   colors = ['#D7ECEF', '#CCE7EC', '#C7E4EA', '#BEE0E7', '#B5DCE4', '#B3DBE3']
 }) => {
   // Paths de olas basados en el diseño de referencia
@@ -26,7 +26,7 @@ const WaveSection: React.FC<WaveSectionProps> = ({
 
   return (
     <section 
-      className={`relative overflow-hidden bg-[#DAEDF0] ${heightClassName} ${className}`}
+      className={`relative overflow-hidden bg-[#B8E3F0] ${heightClassName} ${className}`}
       role="banner"
       aria-label="Hero section with wave background"
     >

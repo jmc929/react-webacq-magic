@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/Logo_acquapack_sin_fondo_gota.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +25,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-3 group">
             <img src={logo} alt="Acquapack Logo" className="h-14 w-14 transition-transform group-hover:scale-110" />
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-primary">ACQUAPACK</span>
-              <span className="text-sm text-brand-gray">S.A.S</span>
+              <span className="text-2xl font-bold text-primary">ACQUAPACK <span className="text-sm text-brand-gray">S.A.S</span></span>
             </div>
           </Link>
 

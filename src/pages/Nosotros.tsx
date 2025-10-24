@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/Logo-Nombre.png";
 
 const Nosotros = () => {
   return (
@@ -15,9 +15,9 @@ const Nosotros = () => {
                 src={logo} 
                 alt="Logo Acquapack" 
                 className="relative w-48 h-48 md:w-64 md:h-64 mx-auto object-contain drop-shadow-2xl"
+                style={{ transform: 'scale(2.5)' }}
               />
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">ACQUAPACK S.A.S</h1>
             <p className="text-2xl md:text-3xl opacity-90">
               Somos líderes en soluciones de tuberías para el sector agrícola, industrial y minero
             </p>

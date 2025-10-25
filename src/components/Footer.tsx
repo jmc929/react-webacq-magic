@@ -11,9 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3 group">
               <img src={logo} alt="Acquapack Logo" className="h-14 w-14 transition-transform group-hover:scale-110" />
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold text-primary">ACQUAPACK <span className="text-sm text-gray-400">S.A.S</span></span>
-              </div>
+              <span className="text-2xl font-bold text-primary">ACQUAPACK <span className="text-sm text-gray-400">S.A.S</span></span>
             </Link>
             <p className="text-base text-gray-300">
               Innovación en tuberías y proyectos para el agro, la industria y la minería.

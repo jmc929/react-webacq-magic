@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/Logo_acquapack_sin_fondo_gota.png";
 
 const Footer = () => {
   return (
@@ -9,11 +9,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo y descripción */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <img src={logo} alt="Acquapack Logo" className="h-12 w-12" />
+            <Link to="/" className="flex items-center space-x-3 group">
+              <img src={logo} alt="Acquapack Logo" className="h-14 w-14 transition-transform group-hover:scale-110" />
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-primary">ACQUAPACK</span>
-                <span className="text-sm text-gray-400">S.A.S</span>
+                <span className="text-2xl font-bold text-primary">ACQUAPACK <span className="text-sm text-gray-400">S.A.S</span></span>
               </div>
             </Link>
             <p className="text-base text-gray-300">

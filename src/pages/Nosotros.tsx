@@ -20,7 +20,7 @@ const Nosotros = () => {
                 src={logo} 
                 alt="Logo Acquapack" 
                 className="relative w-48 h-48 md:w-64 md:h-64 mx-auto object-contain drop-shadow-2xl"
-                style={{ transform: 'scale(2.5)' }}
+                style={{ transform: 'scale(2.3)' }}
               />
             </div>
             <p className="text-2xl md:text-3xl opacity-90">

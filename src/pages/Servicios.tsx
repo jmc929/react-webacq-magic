@@ -2,53 +2,58 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
-  Wrench, 
-  ClipboardCheck, 
-  Truck, 
-  HeadphonesIcon, 
-  GraduationCap, 
-  FileCheck 
+
 } from "lucide-react";
+
+// Import images
+import image1 from "@/assets/1.png";
+import image2 from "@/assets/2.png";
+import image3 from "@/assets/3.png";
+import image4 from "@/assets/4.png";
+import image5 from "@/assets/5.png";
+import image6 from "@/assets/6.png";
+import image7 from "@/assets/7.png";
+import image8 from "@/assets/8.png";
 
 const Servicios = () => {
   const services = [
     {
-      icon: ClipboardCheck,
+      icon: image1,
       title: "Elaboración de plantas de tratamiento de agua",
       description: "Diseñamos e implementamos sistemas completos de purificación y tratamiento de agua para uso industrial, agrícola y comunitario. Nuestras soluciones garantizan agua de calidad cumpliendo con estándares nacionales e internacionales.",
     },
     {
-      icon: Wrench,
+      icon: image2,
       title: "Venta de tubería polietileno",
       description: "Distribuimos tubería de polietileno de alta densidad (HDPE) y baja densidad (LDPE) de las mejores marcas. Ideal para sistemas de riego, conducción de agua potable, minería y aplicaciones industriales con garantía de durabilidad.",
     },
     {
-      icon: Wrench,
+      icon: image3,
       title: "Elaboración de Sistemas de bombeo solar",
       description: "Implementamos sistemas de bombeo impulsados por energía solar, una solución sustentable y eficiente para zonas rurales sin acceso a red eléctrica. Reducimos costos operativos y contribuimos al medio ambiente.",
     },
     {
-      icon: Wrench,
+      icon: image4,
       title: "Elaboración de sistemas de riegos",
       description: "Diseñamos e instalamos sistemas de riego por goteo, aspersión y microaspersión personalizados. Optimizamos el uso del agua y maximizamos la productividad de cultivos con tecnología de punta.",
     },
     {
-      icon: Truck,
+      icon: image5,
       title: "Elaboración de fumiductos",
       description: "Desarrollamos sistemas especializados para la distribución y aplicación de agroquímicos de manera segura y eficiente. Minimizamos pérdidas y garantizamos una aplicación uniforme en cultivos.",
     },
     {
-      icon: HeadphonesIcon,
+      icon: image6,
       title: "Elaboración de acueductos veredales",
       description: "Ejecutamos proyectos integrales de abastecimiento de agua para comunidades rurales. Desde la captación hasta la distribución, mejorando la calidad de vida de las poblaciones veredales.",
     },
     {
-      icon: GraduationCap,
+      icon: image7,
       title: "Proyectos agrícolas y ganaderos",
       description: "Ofrecemos soluciones completas para el sector agropecuario: desde sistemas de riego y bebederos hasta infraestructura para manejo de cultivos y ganado. Aumentamos la productividad de su operación.",
     },
     {
-      icon: FileCheck,
+        icon: image8,
       title: "Venta de accesorios rápidos para tubería",
       description: "Amplio inventario de accesorios, conexiones, válvulas y herrajes para instalaciones rápidas y confiables. Compatible con todas las marcas líderes del mercado, facilitando la instalación y mantenimiento.",
     },
@@ -73,12 +78,15 @@ const Servicios = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
-              const Icon = service.icon;
               return (
                 <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 bg-gradient-to-br from-white to-brand-cyan/5">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-brand-cyan rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <Icon className="h-8 w-8 text-white" />
+                  <CardHeader className="text-center">
+                    <div className="flex justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                      <img 
+                        src={service.icon} 
+                        alt={service.title}
+                        className="h-32 w-32 object-contain"
+                      />
                     </div>
                     <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">{service.title}</CardTitle>
                     <CardDescription className="text-lg leading-relaxed">{service.description}</CardDescription>

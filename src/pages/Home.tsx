@@ -72,28 +72,30 @@ const Home = () => {
     setIsDragging(false);
   };
 
-  // Función para el scroll automático infinit
-
-// Mejora start/stop auto scroll
+  // Función para el scroll automático infinito
   const startAutoScroll = () => {
-  if (!carouselRef.current || isDragging || isPaused || animationRef.current) return;
+    if (!carouselRef.current || isDragging || isPaused || animationRef.current) return;
 
-    const scrollAmount = 0.6; // suave
+    const scrollAmount = 0.6;
 
     const scroll = () => {
-    if (!carouselRef.current || isDragging || isPaused) {
-      animationRef.current = undefined;
-      return;
-    }
-    const c = carouselRef.current;
-    const half = c.scrollWidth / 2; // recalcular aquí
-    if (c.scrollLeft >= half) c.scrollLeft = 0;
+      if (!carouselRef.current || isDragging || isPaused) {
+        animationRef.current = undefined;
+        return;
+      }
+      const c = carouselRef.current;
+      const singleSetWidth = c.scrollWidth / 3; // Dividido por 3 porque triplicamos las marcas
+      
+      // Reset instantáneo cuando llegamos al final del primer set
+      if (c.scrollLeft >= singleSetWidth) {
+        c.scrollLeft = 0;
+      }
 
-    c.scrollLeft += scrollAmount;
+      c.scrollLeft += scrollAmount;
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
     animationRef.current = requestAnimationFrame(scroll);
-  };
-
-  animationRef.current = requestAnimationFrame(scroll);
   };
 
   const stopAutoScroll = () => {
@@ -230,7 +232,7 @@ const Home = () => {
           >
 
               <div className="flex gap-6 w-max">
-                {[...brands, ...brands].map((brand, index) => (
+                {[...brands, ...brands, ...brands].map((brand, index) => (
                   <div key={index} className="flex-shrink-0 w-64">
                     <Card className="p-8 h-32 flex items-center justify-center hover:shadow-lg transition-all bg-white border-border select-none cursor-default">
                       <img

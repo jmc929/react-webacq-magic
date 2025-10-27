@@ -57,43 +57,46 @@ const Catalogo = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {categories.map((category, index) => {
               const Icon = category.icon;
+              const categoryLinks = ["/catalogo/accesorios-poelsan", "/catalogo/mangueras-wiplast"];
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-2 flex-1">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <Icon className="h-6 w-6 text-primary" />
+                <Link key={index} to={categoryLinks[index]}>
+                  <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="space-y-2 flex-1">
+                          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <Icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <CardTitle className="text-3xl">{category.title}</CardTitle>
+                          <CardDescription className="text-lg">{category.description}</CardDescription>
                         </div>
-                        <CardTitle className="text-3xl">{category.title}</CardTitle>
-                        <CardDescription className="text-lg">{category.description}</CardDescription>
                       </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-foreground text-lg">Productos:</h4>
-                      <ul className="space-y-2">
-                        {category.products.map((product, idx) => (
-                          <li key={idx} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                            <span className="text-muted-foreground text-base">{product}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-3 text-foreground text-lg">Aplicaciones:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {category.applications.map((app, idx) => (
-                          <Badge key={idx} variant="secondary">
-                            {app}
-                          </Badge>
-                        ))}
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div>
+                        <h4 className="font-semibold mb-3 text-foreground text-lg">Productos:</h4>
+                        <ul className="space-y-2">
+                          {category.products.map((product, idx) => (
+                            <li key={idx} className="flex items-start space-x-2">
+                              <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                              <span className="text-muted-foreground text-base">{product}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      <div>
+                        <h4 className="font-semibold mb-3 text-foreground text-lg">Aplicaciones:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {category.applications.map((app, idx) => (
+                            <Badge key={idx} variant="secondary">
+                              {app}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               );
             })}
           </div>

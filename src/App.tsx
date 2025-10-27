@@ -7,6 +7,8 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Nosotros from "./pages/Nosotros";
 import Catalogo from "./pages/Catalogo";
+import AccesoriosPoelsan from "./pages/AccesoriosPoelsan";
+import ManguerasWiplast from "./pages/ManguerasWiplast";
 import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
@@ -24,6 +26,8 @@ const App = () => (
             <Route index element={<Home />} />
             <Route path="nosotros" element={<Nosotros />} />
             <Route path="catalogo" element={<Catalogo />} />
+            <Route path="catalogo/accesorios-poelsan" element={<AccesoriosPoelsan />} />
+            <Route path="catalogo/mangueras-wiplast" element={<ManguerasWiplast />} />
             <Route path="servicios" element={<Servicios />} />
             <Route path="contacto" element={<Contacto />} />
           </Route>

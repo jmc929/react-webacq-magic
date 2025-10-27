@@ -38,7 +38,7 @@ const Catalogo = () => {
       {/* Hero Section */}
       <WaveSection 
         heightClassName="h-[200px] sm:h-[250px]"
-        colors={['#E8F4F8', '#D1E9F0', '#B8DDE8', '#A0D1E0', '#87C5D8', '#6FB9D0']}
+        colors={['#F0F8FF', '#E1F2FF', '#D2ECFF', '#C3E6FF', '#B4E0FF', '#A5DAFF']}
         className="py-16"
       >
         <div className="container mx-auto px-4">

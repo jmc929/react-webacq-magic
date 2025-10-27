@@ -9,7 +9,7 @@ const Nosotros = () => {
       {/* Hero Section with Logo */}
       <WaveSection 
         heightClassName="h-[500px] sm:h-[600px]"
-        colors={['#D7ECEF', '#CCE7EC', '#C7E4EA', '#BEE0E7', '#B5DCE4', '#B3DBE3']}
+        colors={['#F0F8FF', '#E1F2FF', '#D2ECFF', '#C3E6FF', '#B4E0FF', '#A5DAFF']}
         className="py-32"
       >
         <div className="container mx-auto px-4">

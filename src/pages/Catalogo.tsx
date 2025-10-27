@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Package, Droplets, Cog, Mountain } from "lucide-react";
+import { Package, Droplets, Cog, Mountain, ArrowRight } from "lucide-react";
 import WaveSection from "@/components/WaveSection";
 
 const Catalogo = () => {
@@ -59,15 +59,18 @@ const Catalogo = () => {
               const Icon = category.icon;
               const categoryLinks = ["/catalogo/accesorios-poelsan", "/catalogo/mangueras-wiplast"];
               return (
-                <Link key={index} to={categoryLinks[index]}>
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <Link key={index} to={categoryLinks[index]} className="group">
+                  <Card className="hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer h-full border-2 hover:border-primary/50">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div className="space-y-2 flex-1">
-                          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                             <Icon className="h-6 w-6 text-primary" />
                           </div>
-                          <CardTitle className="text-3xl">{category.title}</CardTitle>
+                          <div className="flex items-center justify-between">
+                            <CardTitle className="text-3xl group-hover:text-primary transition-colors">{category.title}</CardTitle>
+                            <ArrowRight className="w-6 h-6 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </div>
                           <CardDescription className="text-lg">{category.description}</CardDescription>
                         </div>
                       </div>
@@ -93,6 +96,10 @@ const Catalogo = () => {
                             </Badge>
                           ))}
                         </div>
+                      </div>
+                      <div className="pt-2 flex items-center text-sm text-primary font-medium">
+                        Ver productos
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </CardContent>
                   </Card>

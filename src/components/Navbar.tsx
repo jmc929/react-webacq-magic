@@ -1,7 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/Logo_acquapack_sin_fondo_gota.png";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +18,13 @@ const Navbar = () => {
   const navLinks = [
     { name: "Inicio", path: "/" },
     { name: "Nosotros", path: "/nosotros" },
-    { name: "Catálogo", path: "/catalogo" },
     { name: "Servicios", path: "/servicios" },
     { name: "Contacto", path: "/contacto" },
+  ];
+
+  const catalogoLinks = [
+    { name: "Accesorios Poelsan", path: "/catalogo/accesorios-poelsan" },
+    { name: "Mangueras Wiplast", path: "/catalogo/mangueras-wiplast" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -47,6 +59,37 @@ const Navbar = () => {
                 />
               </Link>
             ))}
+            
+            {/* Catálogo Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`text-base font-medium ${
+                    location.pathname.startsWith("/catalogo") ? "text-primary" : "text-foreground"
+                  }`}>
+                    Catálogo
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      {catalogoLinks.map((link) => (
+                        <li key={link.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={link.path}
+                              className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${
+                                isActive(link.path) ? "bg-accent text-accent-foreground" : ""
+                              }`}
+                            >
+                              <div className="text-sm font-medium leading-none">{link.name}</div>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,6 +119,25 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Catálogo Mobile Submenu */}
+            <div className="px-4 py-2">
+              <div className="text-sm font-medium text-muted-foreground mb-2">Catálogo</div>
+              {catalogoLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-2 rounded-md text-sm transition-colors ${
+                    isActive(link.path)
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-secondary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>

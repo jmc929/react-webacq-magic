@@ -25,10 +25,8 @@ const Catalogo = () => {
       title: "Mangueras Wiplast",
       description: "Mangueras de diferentes calibres y especificaciones",
       products: [
-        "Mangueras de PVC presión",
-        "Mangueras de riego agrícola",
-        "Mangueras industriales",
-        "Diferentes calibres disponibles",
+        "Manguera de polietileno",
+        "Diferentes calibres",
         "Alta resistencia y durabilidad",
       ],
       applications: ["Agricultura", "Industria", "Minería"],

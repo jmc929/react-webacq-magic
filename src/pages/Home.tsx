@@ -126,15 +126,15 @@ const Home = () => {
 
 
   const brands = [
-    { name: "Wiplast", alt: "Logo Wiplast", logo: wiplastLogo, imgClass: "max-h-30 md:max-h-34"},
-    { name: "Poelsan", alt: "Logo Poelsan", logo: poelsanLogo, imgClass: "max-h-16 md:max-h-20"},
+    { name: "WIPLAS", alt: "Logo WIPLAS", logo: wiplastLogo, imgClass: "max-h-30 md:max-h-34"},
+    { name: "POELSAN", alt: "Logo POELSAN", logo: poelsanLogo, imgClass: "max-h-16 md:max-h-20"},
     { name: "Altamira Water", alt: "Logo Altamira", logo: Altamira},
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[700px] flex items-center overflow-hidden">
+      <section className="relative h-[700px] flex items-center overflow-hidden w-full">
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         <img
           src={heroImage}

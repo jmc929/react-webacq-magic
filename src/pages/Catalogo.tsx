@@ -9,7 +9,7 @@ const Catalogo = () => {
   const categories = [
     {
       icon: Package,
-      title: "Accesorios Poelsan",
+      title: "Accesorios POELSAN",
       description: "Accesorios de alta calidad para mangueras",
       products: [
         "Codos y reducciones",
@@ -22,7 +22,7 @@ const Catalogo = () => {
     },
     {
       icon: Droplets,
-      title: "Mangueras Wiplast",
+      title: "Mangueras WIPLAS",
       description: "Mangueras de diferentes calibres y especificaciones",
       products: [
         "Manguera de polietileno",
@@ -116,8 +116,8 @@ const Catalogo = () => {
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-4xl font-bold text-foreground">Marcas Certificadas</h2>
             <p className="text-xl text-muted-foreground">
-              Trabajamos con las marcas más reconocidas del mercado: <strong>Wiplast</strong>,{" "}
-              <strong>Poelsan</strong> y <strong>Altamira Water</strong>, garantizando productos
+              Trabajamos con las marcas más reconocidas del mercado: <strong>WIPLAS</strong>,{" "}
+              <strong>POELSAN</strong> y <strong>Altamira Water</strong>, garantizando productos
               de la más alta calidad y durabilidad.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">

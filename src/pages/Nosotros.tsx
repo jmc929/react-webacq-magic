@@ -14,12 +14,11 @@ const Nosotros = () => {
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up space-y-8">
-            <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan via-primary to-brand-blue blur-3xl opacity-40 animate-pulse"></div>
+            <div className="flex justify-center">
               <img 
                 src={logo} 
-                alt="Logo Acquapack" 
-                className="relative w-48 h-48 md:w-64 md:h-64 mx-auto object-contain drop-shadow-2xl"
+                alt="Logo ACQUAPACK" 
+                className="w-48 h-48 md:w-64 md:h-64 mx-auto object-contain"
                 style={{ transform: 'scale(2.3)' }}
               />
             </div>
@@ -36,7 +35,7 @@ const Nosotros = () => {
           <div className="max-w-4xl mx-auto space-y-8">
             <h2 className="text-5xl font-bold mb-6 text-foreground text-center">¿Quiénes Somos?</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              <strong className="text-primary text-2xl">Acquapack S.A.S</strong> es una empresa colombiana especializada en la
+              <strong className="text-primary text-2xl">ACQUAPACK S.A.S</strong> es una empresa colombiana especializada en la
               distribución e instalación de sistemas de tuberías de alta calidad para diferentes sectores industriales.
               Con años de experiencia en el mercado, nos hemos consolidado como un aliado confiable para proyectos
               de agricultura, minería e industria.

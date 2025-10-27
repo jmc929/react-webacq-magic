@@ -1,10 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Search } from "lucide-react";
+import { useState } from "react";
 import WaveSection from "@/components/WaveSection";
 
 const AccesoriosPoelsan = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const products = [
     {
       id: 1,
@@ -123,6 +127,10 @@ const AccesoriosPoelsan = () => {
     },
   ];
 
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen">
       <WaveSection 
@@ -133,7 +141,7 @@ const AccesoriosPoelsan = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-muted-foreground">
-              Accesorios Poelsan
+              Accesorios POELSAN
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground opacity-90">
               Accesorios de alta calidad para mangueras
@@ -144,33 +152,52 @@ const AccesoriosPoelsan = () => {
 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="mb-8">
+          <div className="mb-8 flex items-center justify-between gap-4">
             <Button asChild variant="outline">
               <Link to="/catalogo">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Volver al catálogo
               </Link>
             </Button>
+            
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Buscar productos..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product) => (
-              <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-square overflow-hidden bg-muted">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-foreground text-center">
-                    {product.name}
-                  </h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {filteredProducts.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-xl text-muted-foreground">
+                No se encontraron productos con "{searchTerm}"
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProducts.map((product) => (
+                <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-square overflow-hidden bg-muted">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="text-lg font-semibold text-foreground text-center">
+                      {product.name}
+                    </h3>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>

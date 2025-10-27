@@ -1,31 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/Logo_acquapack_sin_fondo_gota.png";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-
-  const navLinks = [
-    { name: "Inicio", path: "/" },
-    { name: "Nosotros", path: "/nosotros" },
-    { name: "Servicios", path: "/servicios" },
-    { name: "Contacto", path: "/contacto" },
-  ];
-
-  const catalogoLinks = [
-    { name: "Accesorios Poelsan", path: "/catalogo/accesorios-poelsan" },
-    { name: "Mangueras Wiplast", path: "/catalogo/mangueras-wiplast" },
-  ];
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -43,53 +23,80 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-base font-medium transition-colors relative group ${
-                  isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
+            {/* Inicio */}
+            <Link
+              to="/"
+              className={`text-base font-medium transition-colors relative group ${
+                isActive("/") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
+            >
+              Inicio
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
+                  isActive("/") ? "w-full" : "w-0 group-hover:w-full"
                 }`}
-              >
-                {link.name}
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
-                    isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-                />
-              </Link>
-            ))}
+              />
+            </Link>
+
+            {/* Nosotros */}
+            <Link
+              to="/nosotros"
+              className={`text-base font-medium transition-colors relative group ${
+                isActive("/nosotros") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
+            >
+              Nosotros
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
+                  isActive("/nosotros") ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+            </Link>
             
-            {/* Catálogo Dropdown */}
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`text-base font-medium ${
-                    location.pathname.startsWith("/catalogo") ? "text-primary" : "text-foreground"
-                  }`}>
-                    Catálogo
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2">
-                      {catalogoLinks.map((link) => (
-                        <li key={link.path}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={link.path}
-                              className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${
-                                isActive(link.path) ? "bg-accent text-accent-foreground" : ""
-                              }`}
-                            >
-                              <div className="text-sm font-medium leading-none">{link.name}</div>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            {/* Catálogo */}
+            <Link
+              to="/catalogo"
+              className={`text-base font-medium transition-colors relative group ${
+                location.pathname.startsWith("/catalogo") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
+            >
+              Catálogo
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
+                  location.pathname.startsWith("/catalogo") ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+            </Link>
+
+            {/* Servicios */}
+            <Link
+              to="/servicios"
+              className={`text-base font-medium transition-colors relative group ${
+                isActive("/servicios") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
+            >
+              Servicios
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
+                  isActive("/servicios") ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+            </Link>
+
+            {/* Contacto */}
+            <Link
+              to="/contacto"
+              className={`text-base font-medium transition-colors relative group ${
+                isActive("/contacto") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
+            >
+              Contacto
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
+                  isActive("/contacto") ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,39 +112,70 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2 animate-fade-in-up">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(link.path)
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-secondary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {/* Inicio */}
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive("/")
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-secondary"
+              }`}
+            >
+              Inicio
+            </Link>
+
+            {/* Nosotros */}
+            <Link
+              to="/nosotros"
+              onClick={() => setIsOpen(false)}
+              className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive("/nosotros")
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-secondary"
+              }`}
+            >
+              Nosotros
+            </Link>
             
-            {/* Catálogo Mobile Submenu */}
-            <div className="px-4 py-2">
-              <div className="text-sm font-medium text-muted-foreground mb-2">Catálogo</div>
-              {catalogoLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2 rounded-md text-sm transition-colors ${
-                    isActive(link.path)
-                      ? "bg-primary text-primary-foreground"
-                      : "hover:bg-secondary"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
+            {/* Catálogo */}
+            <Link
+              to="/catalogo"
+              onClick={() => setIsOpen(false)}
+              className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                location.pathname.startsWith("/catalogo")
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-secondary"
+              }`}
+            >
+              Catálogo
+            </Link>
+
+            {/* Servicios */}
+            <Link
+              to="/servicios"
+              onClick={() => setIsOpen(false)}
+              className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive("/servicios")
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-secondary"
+              }`}
+            >
+              Servicios
+            </Link>
+
+            {/* Contacto */}
+            <Link
+              to="/contacto"
+              onClick={() => setIsOpen(false)}
+              className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive("/contacto")
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-secondary"
+              }`}
+            >
+              Contacto
+            </Link>
           </div>
         )}
       </div>

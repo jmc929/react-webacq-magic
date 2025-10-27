@@ -242,7 +242,7 @@ const Contacto = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación Acquapack"
+                title="Ubicación ACQUAPACK"
               />
             </div>
           </div>

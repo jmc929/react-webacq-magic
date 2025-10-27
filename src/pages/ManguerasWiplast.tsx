@@ -14,7 +14,7 @@ const ManguerasWiplast = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-muted-foreground">
-              Mangueras Wiplast
+              Mangueras WIPLAS
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground opacity-90">
               Mangueras de diferentes calibres y especificaciones
@@ -40,7 +40,7 @@ const ManguerasWiplast = () => {
             </div>
             <h2 className="text-4xl font-bold text-foreground">Página en Construcción</h2>
             <p className="text-xl text-muted-foreground max-w-md">
-              Estamos trabajando en esta sección. Pronto tendrás acceso a nuestro catálogo completo de mangueras Wiplast.
+              Estamos trabajando en esta sección. Pronto tendrás acceso a nuestro catálogo completo de mangueras WIPLAS.
             </p>
           </div>
         </div>

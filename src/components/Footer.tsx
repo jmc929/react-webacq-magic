@@ -11,9 +11,9 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3 group">
               <img src={logo} alt="Acquapack Logo" className="h-14 w-14 transition-transform group-hover:scale-110" />
-              <span className="text-2xl font-bold text-primary">ACQUAPACK <span className="text-sm text-gray-400">S.A.S</span></span>
+              <span className="text-2xl font-bold text-primary">ACQUAPACK <span className="text-sm text-brand-gray">S.A.S</span></span>
             </Link>
-            <p className="text-base text-gray-300">
+            <p className="text-base text-brand-gray">
               Innovación en tuberías y proyectos para el agro, la industria y la minería.
             </p>
           </div>
@@ -23,27 +23,27 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-base text-gray-300 hover:text-primary transition-colors">
+                <Link to="/" className="text-base text-brand-gray hover:text-primary transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/nosotros" className="text-base text-gray-300 hover:text-primary transition-colors">
+                <Link to="/nosotros" className="text-base text-brand-gray hover:text-primary transition-colors">
                   Quienes somos
                 </Link>
               </li>
               <li>
-                <Link to="/catalogo" className="text-base text-gray-300 hover:text-primary transition-colors">
+                <Link to="/catalogo" className="text-base text-brand-gray hover:text-primary transition-colors">
                   Catálogo
                 </Link>
               </li>
               <li>
-                <Link to="/servicios" className="text-base text-gray-300 hover:text-primary transition-colors">
+                <Link to="/servicios" className="text-base text-brand-gray hover:text-primary transition-colors">
                   Servicios
                 </Link>
               </li>
               <li>
-                <Link to="/contacto" className="text-base text-gray-300 hover:text-primary transition-colors">
+                <Link to="/contacto" className="text-base text-brand-gray hover:text-primary transition-colors">
                   Contacto
                 </Link>
               </li>
@@ -57,7 +57,7 @@ const Footer = () => {
               <li>
                 <a
                   href="tel:3174399679"
-                  className="flex items-center space-x-2 text-base text-gray-300 hover:text-primary transition-colors"
+                  className="flex items-center space-x-2 text-base text-brand-gray hover:text-primary transition-colors"
                 >
                   <Phone className="h-5 w-5" />
                   <span>317 439 9679</span>
@@ -66,7 +66,7 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:acquapack@acquapackcolombia.com"
-                  className="flex items-center space-x-2 text-base text-gray-300 hover:text-primary transition-colors"
+                  className="flex items-center space-x-2 text-base text-brand-gray hover:text-primary transition-colors"
                 >
                   <Mail className="h-5 w-5" />
                   <span>acquapack@acquapackcolombia.com</span>
@@ -82,7 +82,7 @@ const Footer = () => {
               href="https://www.google.com/maps/place/Cl.+35+%2351-11,+La+Candelaria,+Medell%C3%ADn"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start space-x-2 text-base text-gray-300 hover:text-primary transition-colors mb-4"
+              className="flex items-start space-x-2 text-base text-brand-gray hover:text-primary transition-colors mb-4"
             >
               <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
               <span>Barrio Perpetuo Socorro, Calle 35 #51-11, Medellín, Antioquia</span>
@@ -113,8 +113,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Acquapack S.A.S. Todos los derechos reservados.
+          <p className="text-sm text-brand-gray">
+            © {new Date().getFullYear()} ACQUAPACK S.A.S. Todos los derechos reservados.
           </p>
         </div>
       </div>

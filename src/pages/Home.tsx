@@ -76,7 +76,7 @@ const Home = () => {
   const startAutoScroll = () => {
     if (!carouselRef.current || isDragging || isPaused || animationRef.current) return;
 
-    const scrollAmount = 0.3;
+    const scrollAmount = 0.8;
 
     const scroll = () => {
       if (!carouselRef.current || isDragging || isPaused) {

@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Instagram, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import WaveSection from "@/components/WaveSection";
 
 const Contacto = () => {
   const { toast } = useToast();
@@ -35,16 +36,20 @@ const Contacto = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-gradient py-20 text-white">
+      <WaveSection 
+        heightClassName="h-[200px] sm:h-[250px]"
+        colors={['#F5F9FA', '#EBF3F6', '#E1EDF2', '#D7E7EE', '#CDE1EA', '#C3DBE6']}
+        className="py-16"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Contáctanos</h1>
-            <p className="text-xl md:text-2xl opacity-90">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-muted-foreground">Contáctanos</h1>
+            <p className="text-xl md:text-2xl text-muted-foreground opacity-90">
               Estamos aquí para ayudarte con tu proyecto
             </p>
           </div>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Contact Section */}
       <section className="py-16 bg-background">

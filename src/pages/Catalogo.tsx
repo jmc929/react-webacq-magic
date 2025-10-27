@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Package, Droplets, Cog, Mountain } from "lucide-react";
+import WaveSection from "@/components/WaveSection";
 
 const Catalogo = () => {
   const categories = [
@@ -63,16 +64,20 @@ const Catalogo = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-gradient py-20 text-white">
+      <WaveSection 
+        heightClassName="h-[200px] sm:h-[250px]"
+        colors={['#E8F4F8', '#D1E9F0', '#B8DDE8', '#A0D1E0', '#87C5D8', '#6FB9D0']}
+        className="py-16"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Nuestro Catálogo</h1>
-            <p className="text-xl md:text-2xl opacity-90">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-muted-foreground">Nuestro Catálogo</h1>
+            <p className="text-xl md:text-2xl text-muted-foreground opacity-90">
               Amplia gama de productos para todos los sectores industriales
             </p>
           </div>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Categories Section */}
       <section className="py-16 bg-background">

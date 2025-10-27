@@ -8,56 +8,30 @@ import WaveSection from "@/components/WaveSection";
 const Catalogo = () => {
   const categories = [
     {
-      icon: Droplets,
-      title: "Sistemas de Riego",
-      description: "Tuberías y accesorios para riego agrícola",
-      products: [
-        "Tuberías de PVC presión",
-        "Mangueras de riego",
-        "Aspersores y microaspersores",
-        "Filtros y válvulas",
-        "Cintas de goteo",
-      ],
-      applications: ["Agricultura", "Horticultura", "Invernaderos"],
-    },
-    {
-      icon: Cog,
-      title: "Aplicaciones Industriales",
-      description: "Soluciones para procesos industriales",
-      products: [
-        "Tuberías de alta presión",
-        "Válvulas industriales",
-        "Conexiones especiales",
-        "Sistemas de conducción",
-        "Accesorios técnicos",
-      ],
-      applications: ["Industria", "Manufactura", "Procesamiento"],
-    },
-    {
-      icon: Mountain,
-      title: "Sector Minero",
-      description: "Equipamiento robusto para minería",
-      products: [
-        "Tuberías de alta resistencia",
-        "Mangueras para lodos",
-        "Sistemas de bombeo",
-        "Válvulas de seguridad",
-        "Equipos especializados",
-      ],
-      applications: ["Minería", "Extracción", "Transporte de minerales"],
-    },
-    {
       icon: Package,
-      title: "Accesorios y Complementos",
-      description: "Todo lo que necesitas para tu proyecto",
+      title: "Accesorios Poelsan",
+      description: "Accesorios de alta calidad para mangueras",
       products: [
         "Codos y reducciones",
-        "Adaptadores",
-        "Abrazaderas",
+        "Adaptadores universales",
+        "Abrazaderas de seguridad",
         "Uniones rápidas",
-        "Pegantes y sellantes",
+        "Conectores especializados",
       ],
-      applications: ["Todo tipo de instalaciones"],
+      applications: ["Agricultura", "Industria", "Riego"],
+    },
+    {
+      icon: Droplets,
+      title: "Mangueras Wiplast",
+      description: "Mangueras de diferentes calibres y especificaciones",
+      products: [
+        "Mangueras de PVC presión",
+        "Mangueras de riego agrícola",
+        "Mangueras industriales",
+        "Diferentes calibres disponibles",
+        "Alta resistencia y durabilidad",
+      ],
+      applications: ["Agricultura", "Industria", "Minería"],
     },
   ];
 

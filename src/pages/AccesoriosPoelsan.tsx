@@ -5,6 +5,19 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Search } from "lucide-react";
 import { useState } from "react";
 import WaveSection from "@/components/WaveSection";
+import adaptadorHembra from "@/assets/ADAPTADOR_HEMBRA_CON_ANILLO_DE_REFUERZO_GALVANIZADO.png";
+import teeHembra from "@/assets/TEE_HEMBRA_CON_ANILLO_DE_REFUERZO_GALVANIZADO.png";
+import adaptadorMachoRapido from "@/assets/ADAPTADOR_MACHO_RAPIDO.png";
+import unionRapida from "@/assets/UNION_RAPIDA.png";
+import teeRapida from "@/assets/TEE_RAPIDA.png";
+import teeRapidaMacho from "@/assets/TEE_RAPIDA_ROSCA_MACHO.png";
+import codoRapido from "@/assets/CODO_RAPIDO.png";
+import taponRapido from "@/assets/TAPON_RAPIDO.png";
+import teeReducidaRapida from "@/assets/TEE_REDUCIDA_RAPIDA.png";
+import unionRapidaReducida from "@/assets/UNION_RAPIDA_REDUCIDA.png"
+import collar from "@/assets/COLLAR_DE_DERIVACION_CON_PERNO_Y_ANILLO_DE_REFUERZO.png"
+import filtroDisco from "@/assets/FILTRO_PLASTICO_DE_DISCO.jpg"
+import filtroAnillo from "@/assets/FILTRO_PLASTICO_DE_ANILLO.jpg"
 
 const AccesoriosPoelsan = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,52 +26,52 @@ const AccesoriosPoelsan = () => {
     {
       id: 1,
       name: "Adaptador hembra con anillo de refuerzo galvanizado",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop",
+      image: adaptadorHembra,
     },
     {
       id: 2,
       name: "Tee Hembra con anillo de refuerzo Galvanizado",
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=400&fit=crop",
+      image: teeHembra,
     },
     {
       id: 3,
       name: "Adaptador Macho Rapido",
-      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=400&h=400&fit=crop",
+      image: adaptadorMachoRapido,
     },
     {
       id: 4,
       name: "Union rapida",
-      image: "https://images.unsplash.com/photo-1581092583537-20d51876f3c3?w=400&h=400&fit=crop",
+      image: unionRapida,
     },
     {
       id: 5,
       name: "Tee rapida",
-      image: "https://images.unsplash.com/photo-1581092446061-9e1e23b12ff1?w=400&h=400&fit=crop",
+      image: teeRapida,
     },
     {
       id: 6,
       name: "Tee rapida rosca macho",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=400&fit=crop",
+      image: teeRapidaMacho,
     },
     {
       id: 7,
       name: "Codo rapido",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop",
+      image: codoRapido,
     },
     {
       id: 8,
       name: "Tapon rapido",
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=400&fit=crop",
+      image: taponRapido,
     },
     {
       id: 9,
       name: "Tee reducida rapida",
-      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=400&h=400&fit=crop",
+      image: teeReducidaRapida,
     },
     {
       id: 10,
       name: "Union rapida reducida",
-      image: "https://images.unsplash.com/photo-1581092583537-20d51876f3c3?w=400&h=400&fit=crop",
+      image: unionRapidaReducida,
     },
     {
       id: 11,
@@ -68,7 +81,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 12,
       name: "Collar de derivacion con perno y anillo de refuerzo galvanizado",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=400&fit=crop",
+      image: collar,
     },
     {
       id: 13,
@@ -88,12 +101,12 @@ const AccesoriosPoelsan = () => {
     {
       id: 16,
       name: "Filtro plastico de disco",
-      image: "https://images.unsplash.com/photo-1581092583537-20d51876f3c3?w=400&h=400&fit=crop",
+      image: filtroDisco,
     },
     {
       id: 17,
       name: "Filtro plastico de anillo",
-      image: "https://images.unsplash.com/photo-1581092446061-9e1e23b12ff1?w=400&h=400&fit=crop",
+      image: filtroAnillo,
     },
     {
       id: 18,

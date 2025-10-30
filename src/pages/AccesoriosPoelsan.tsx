@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft, Search, Info } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -272,15 +272,21 @@ const AccesoriosPoelsan = () => {
               {filteredProducts.map((product) => (
                 <Card 
                   key={product.id} 
-                  className="overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+                  className="overflow-hidden hover:shadow-lg transition-all cursor-pointer group"
                   onClick={() => setSelectedProduct(product)}
                 >
-                  <div className="aspect-square overflow-hidden bg-muted">
+                  <div className="aspect-square overflow-hidden bg-muted relative">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="flex items-center gap-2 text-white font-semibold">
+                        <Info size={20} />
+                        <span>Ver detalles</span>
+                      </div>
+                    </div>
                   </div>
                   <CardContent className="p-4">
                     <h3 className="text-lg font-semibold text-foreground text-center">

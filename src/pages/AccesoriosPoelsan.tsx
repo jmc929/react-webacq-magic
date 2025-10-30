@@ -295,7 +295,7 @@ const AccesoriosPoelsan = () => {
       </section>
 
       <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-4xl">
           <DialogHeader>
             <DialogTitle className="text-2xl">{selectedProduct?.name}</DialogTitle>
           </DialogHeader>

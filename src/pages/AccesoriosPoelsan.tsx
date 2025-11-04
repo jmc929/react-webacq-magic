@@ -24,6 +24,10 @@ import unionRapidaReducida from "@/assets/UNION_RAPIDA_REDUCIDA.png"
 import collar from "@/assets/COLLAR_DE_DERIVACION_CON_PERNO_Y_ANILLO_DE_REFUERZO.png"
 import filtroDisco from "@/assets/FILTRO_PLASTICO_DE_DISCO.jpg"
 import filtroAnillo from "@/assets/FILTRO_PLASTICO_DE_ANILLO.jpg"
+import llaveAccesorios from "@/assets/LLAVE_PARA_ACCESORIOS_Y_ADAPTADORES.png"
+import valvularapida from "@/assets/VALVULA_DE_BOLA_RAPIDA_HEMBRA.png"
+import valvulaAcoplamiento from "@/assets/VALVULA_DE_ACOPLAMIENTO.png"
+import unionInterna from "@/assets/UNION_INTERNA.jpg"
 
 const AccesoriosPoelsan = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -113,7 +117,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 11,
       name: "Llave para accesorios y adaptadores",
-      image: "https://images.unsplash.com/photo-1581092446061-9e1e23b12ff1?w=400&h=400&fit=crop",
+      image: llaveAccesorios,
       sizes: "Universal",
       pressure: "N/A",
       applications: "Instalación y mantenimiento de accesorios",
@@ -129,7 +133,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 13,
       name: "Valvula de bola rapida/hembra npt",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop",
+      image: valvularapida,
       sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
       pressure: "16 bar",
       applications: "Control de flujo, Sistemas de riego",
@@ -145,7 +149,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 15,
       name: "Valvula de acoplamiento rapido con llave (hidrante + Bayoneta)",
-      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=400&h=400&fit=crop",
+      image: valvulaAcoplamiento,
       sizes: "2\", 2 1/2\", 3\"",
       pressure: "10-16 bar",
       applications: "Hidrantes, Sistemas contra incendios",
@@ -169,7 +173,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 18,
       name: "Union interna",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=400&fit=crop",
+      image: unionInterna,
       sizes: "16mm, 20mm",
       pressure: "6 bar",
       applications: "Riego por goteo, Microirrigación",

@@ -3,10 +3,19 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import heroImage from "@/assets/hero-image.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
+import heroImage from "@/assets/riegos.png";
+import riegosImg from "@/assets/riegos.png";
+import betaniaImg from "@/assets/betania (2).jpg";
+import impermeabilizacionImg from "@/assets/IMPERMEABILIZACION DE TANQUE 3 galeria.jpeg";
+import mangueraCampoImg from "@/assets/Manguera y campo galeria.jpeg";
+import mangueraImg from "@/assets/manguera.jpg";
+import manguera2Img from "@/assets/manguera2.png";
+import panelImg from "@/assets/panel.jpg";
+import panel2Img from "@/assets/panel2.jpg";
+import panel3Img from "@/assets/Panel3.jpg";
+import plaasticoImg from "@/assets/plaastico.jpg";
+import tanqueImg from "@/assets/tanque.jpg";
+import tractorManguerasImg from "@/assets/tractor y mangueras galeria.jpeg";
 import poelsanLogo from "@/assets/poelsan.png";
 import Altamira from "@/assets/altamira_water_logo.png";
 import wiplastLogo from "@/assets/WiplastLogo.png";
@@ -20,7 +29,20 @@ const Home = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
   
-  const galleryImages = [gallery1, gallery2, gallery3];
+  const galleryImages = [
+    riegosImg, 
+    betaniaImg, 
+    impermeabilizacionImg, 
+    mangueraCampoImg, 
+    mangueraImg, 
+    manguera2Img, 
+    panelImg, 
+    panel2Img, 
+    panel3Img, 
+    plaasticoImg, 
+    tanqueImg, 
+    tractorManguerasImg
+  ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % galleryImages.length);

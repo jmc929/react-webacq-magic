@@ -129,6 +129,14 @@ const Home = () => {
 
 
 
+  // Precargar imágenes de la galería
+  useEffect(() => {
+    galleryImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   // Efecto para manejar el scroll automático
   useEffect(() => {
     if (!isDragging && !isPaused) {

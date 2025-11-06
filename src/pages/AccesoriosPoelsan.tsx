@@ -27,7 +27,14 @@ import filtroAnillo from "@/assets/FILTRO_PLASTICO_DE_ANILLO.jpg"
 import llaveAccesorios from "@/assets/LLAVE_PARA_ACCESORIOS_Y_ADAPTADORES.png"
 import valvularapida from "@/assets/VALVULA_DE_BOLA_RAPIDA_HEMBRA.png"
 import valvulaAcoplamiento from "@/assets/VALVULA_DE_ACOPLAMIENTO.png"
+import valvulaBolaConexionRapida from "@/assets/VALVULA_BOLA.png"
 import unionInterna from "@/assets/UNION_INTERNA.jpg"
+import racorMacho from "@/assets/RACOR_MACHO.png"
+import teeInterna from "@/assets/TEE_INTERNA.png"
+import codoInterno from "@/assets/CODO_INTERNO.png"
+import conectorInicial from "@/assets/CONECTOR_INICIAL.png"
+import obturadorFinal from "@/assets/OBTURADOR_FINAL.png"
+
 
 const AccesoriosPoelsan = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -141,7 +148,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 14,
       name: "Valvula de bola conexion rapida",
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=400&fit=crop",
+      image: valvulaBolaConexionRapida,
       sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\"",
       pressure: "16 bar",
       applications: "Apertura/cierre rápido, Riego por aspersión",
@@ -181,7 +188,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 19,
       name: "Racor macho",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop",
+      image: racorMacho,
       sizes: "16mm x 1/2\", 16mm x 3/4\"",
       pressure: "6 bar",
       applications: "Conexiones con rosca, Goteo",
@@ -189,7 +196,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 20,
       name: "Tee interna 16MM",
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=400&fit=crop",
+      image: teeInterna,
       sizes: "16mm",
       pressure: "6 bar",
       applications: "Derivaciones en goteo, Microirrigación",
@@ -197,7 +204,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 21,
       name: "Codo interno 16mm",
-      image: "https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=400&h=400&fit=crop",
+      image: codoInterno,
       sizes: "16mm",
       pressure: "6 bar",
       applications: "Cambios de dirección en goteo",
@@ -205,7 +212,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 22,
       name: "Conector inicial con silleta",
-      image: "https://images.unsplash.com/photo-1581092583537-20d51876f3c3?w=400&h=400&fit=crop",
+      image: conectorInicial,
       sizes: "16mm",
       pressure: "6 bar",
       applications: "Inicio de líneas de goteo",
@@ -213,7 +220,7 @@ const AccesoriosPoelsan = () => {
     {
       id: 23,
       name: "Obturador Final 16mm",
-      image: "https://images.unsplash.com/photo-1581092446061-9e1e23b12ff1?w=400&h=400&fit=crop",
+      image: obturadorFinal,
       sizes: "16mm",
       pressure: "6 bar",
       applications: "Cierre de líneas de goteo",

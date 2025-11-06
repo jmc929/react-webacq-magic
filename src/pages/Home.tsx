@@ -25,7 +25,8 @@ const Home = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [isPaused, setIsPaused] = useState(false); // Iniciar activo
+  const [isPaused, setIsPaused] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
   
@@ -45,10 +46,12 @@ const Home = () => {
   ];
 
   const nextSlide = () => {
+    setImageLoaded(false);
     setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
   };
 
   const prevSlide = () => {
+    setImageLoaded(false);
     setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
@@ -129,13 +132,29 @@ const Home = () => {
 
 
 
-  // Precargar imágenes de la galería
+  // Precargar todas las imágenes al inicio
   useEffect(() => {
     galleryImages.forEach((src) => {
       const img = new Image();
       img.src = src;
     });
   }, []);
+
+  // Precargar imágenes adyacentes al cambiar de slide
+  useEffect(() => {
+    const preloadAdjacent = () => {
+      const prevIndex = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
+      const nextIndex = (currentSlide + 1) % galleryImages.length;
+      
+      [prevIndex, nextIndex, currentSlide].forEach(index => {
+        const img = new Image();
+        img.src = galleryImages[index];
+      });
+    };
+    
+    preloadAdjacent();
+    setImageLoaded(true);
+  }, [currentSlide]);
 
   // Efecto para manejar el scroll automático
   useEffect(() => {
@@ -201,12 +220,21 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-foreground">Galería</h2>
           <div className="relative max-w-4xl mx-auto">
-            <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
+            <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl bg-muted">
               <img
                 src={galleryImages[currentSlide]}
                 alt={`Gallery ${currentSlide + 1}`}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setImageLoaded(true)}
+                loading="eager"
               />
+              {!imageLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                </div>
+              )}
             </div>
             <button
               onClick={prevSlide}

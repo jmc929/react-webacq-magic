@@ -35,195 +35,203 @@ import codoInterno from "@/assets/CODO_INTERNO.png"
 import conectorInicial from "@/assets/CONECTOR_INICIAL.png"
 import obturadorFinal from "@/assets/OBTURADOR_FINAL.png"
 
+type Product = {
+  id: number;
+  name: string;
+  image: string;
+  sizes: string;
+  pressure: string;
+  applications: string;
+};
 
 const AccesoriosPoelsan = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState<null | typeof products[0]>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const products = [
+  const products: Product[] = [
     {
       id: 1,
       name: "Adaptador hembra con anillo de refuerzo galvanizado",
       image: adaptadorHembra,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
-      pressure: "10-16 bar",
-      applications: "Sistemas de riego, Agricultura, Jardines",
+      sizes: "20 x 1/2\", 20 x 3/4\", 25 x 1/2\", 25 x 3/4\", 25 x 1\", 32 x 3/4\", 32 x 1\", 32 x 1 1/4\", 40 x 1\", 40 x 1 1/4\", 40 x 1 1/2\", 50 x 1 1/4\", 50 x 1 1/2\", 50 x 2\", 63 x 2 1/2\", 75 x 2\", 75 x 2 1/2\", 75 x 3\", 90 x 2\", 90 x 2 1/2\", 90 x 3\", 90 x 4\", 110 x 2\", 110 x 2 1/2\", 110 x 3\", 63 x 1 1/2\", 63 x 2\", 110 x 4\"",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistemas de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 2,
       name: "Tee Hembra con anillo de refuerzo Galvanizado",
       image: teeHembra,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\"",
-      pressure: "10-16 bar",
-      applications: "Sistemas de riego, Distribución de agua",
+      sizes: "20 x 1/2\" x 20, 20 x 3/4\" x 20, 25 x 1/2\" x 25, 25 x 3/4\" x 25, 25 x 1\" x 25, 32 x 1/2\" x 32, 32 x 3/4\" x 32, 32 x 1\" x 32, 32 x 1 1/4\" x 32, 40 x 3/4\" x 40, 40 x 1\" x 40, 40 x 1 1/4\" x 40, 40 x 1 1/2\" x 40, 50 x 3/4\" x 50, 50 x 1\" x 50, 50 x 1 1/4\" x 50, 50 x 1 1/2\" x 50, 50 x 2\" x 50, 63 x 1\" x 63, 63 x 1 1/4\" x 63, 63 x 1 1/2\" x 63, 63 x 2\" x 63, 63 x 2 1/2\" x 63, 75 x 2\" x 75, 75 x 2 1/2\" x 75, 75 x 3\" x 75, 90 x 2 1/2\" x 90, 90 x 3\" x 90, 90 x 4\" x 90, 110 x 2 1/2\" x 110, 110 x 3\" x 110, 110 x 4\" x 110",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 3,
       name: "Adaptador Macho Rapido",
       image: adaptadorMachoRapido,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
-      pressure: "10-16 bar",
-      applications: "Conexiones rápidas, Riego agrícola",
+      sizes: "20 x 1/2\", 20 x 3/4\", 25 x 1/2\", 25 x 3/4\", 25 x 1\", 32 x 1/2\", 32 x 3/4\", 32 x 1\", 32 x 1 1/4\", 40 x 1\", 40 x 1 1/4\", 40 x 1 1/2\", 50 x 1 1/4\", 50 x 1 1/2\", 50 x 2\", 63 x 1 1/2\", 63 x 2\", 63 x 2 1/2\", 75 x 2\", 75 x 2 1/2\", 75 x 3\", 90 x 2\", 90 x 2 1/2\", 90 x 3\", 90 x 4\", 110 x 2\", 110 x 2 1/2\", 110 x 3\", 110 x 4\"",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 4,
       name: "Union rapida",
       image: unionRapida,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
-      pressure: "10-16 bar",
-      applications: "Uniones rápidas, Sistemas de riego",
+      sizes: "20 x 20, 25 x 25, 32 x 32, 40 x 40, 50 x 50, 63 x 63, 75 x 75, 90 x 90, 110 x 110",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 5,
       name: "Tee rapida",
       image: teeRapida,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\"",
-      pressure: "10-16 bar",
-      applications: "Derivaciones rápidas, Riego por aspersión",
+      sizes: "16x16x16, 20 x 20 x 20, 25 x 25 x 25, 32 x 32 x 32, 40 x 40 x 40, 50 x 50 x 50, 63 x 63 x 63, 75 x 75 x 75, 90 x 90 x 90, 110 x 110 x 110",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 6,
       name: "Tee rapida rosca macho",
       image: teeRapidaMacho,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\"",
-      pressure: "10-16 bar",
-      applications: "Conexiones con rosca, Sistemas de riego",
+      sizes: "20 x 1/2\" x 20, 20 x 3/4\" x 20, 25 x 1/2\" x 25, 25 x 3/4\" x 25, 25 x 1\" x 25, 32 x 3/4\" x 32, 32 x 1\" x 32, 32 x 1 1/4\" x 32, 40 x 1\" x 40, 40 x 1 1/4\" x 40, 40 x 1 1/2\" x 40, 50 x 1\" x 50, 50 x 1 1/4\" x 50, 50 x 1 1/2\" x 50, 50 x 2\" x 50, 63 x 1 1/4\" x 63, 63 x 1 1/2\" x 63, 63 x 2\" x 63, 63 x 2 1/2\" x 63, 75 x 2\" x 75, 75 x 2 1/2\" x 75, 75 x 3\" x 75, 90 x 2\" x 90, 90 x 2 1/2\" x 90, 90 x 3\" x 90, 90 x 4\" x 90, 110 x 2 1/2\" x 110, 110 x 3\" x 110, 110 x 4\" x 110",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 7,
       name: "Codo rapido",
       image: codoRapido,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\"",
-      pressure: "10-16 bar",
-      applications: "Cambios de dirección, Instalaciones agrícolas",
+      sizes: "20 x 20, 25 x 25, 32 x 32, 40 x 40, 50 x 50, 63 x 63, 75 x 75, 90 x 90, 110 x 110",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 8,
       name: "Tapon rapido",
       image: taponRapido,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
-      pressure: "10-16 bar",
-      applications: "Cierre de líneas, Mantenimiento temporal",
+      sizes: "20, 25, 32, 40, 50, 63, 75, 90, 110",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 9,
       name: "Tee reducida rapida",
       image: teeReducidaRapida,
-      sizes: "3/4\" x 1/2\", 1\" x 3/4\", 1 1/4\" x 1\"",
-      pressure: "10-16 bar",
-      applications: "Reducciones de flujo, Riego por goteo",
+      sizes: "25 x 20 x 25, 32 x 20 x 32, 32 x 25 x 32, 40 x 25 x 40, 40 x 32 x 40, 50 x 25 x 50, 50 x 32 x 50, 50 x 40 x 50, 63 x 25 x 63, 63 x 32 x 63, 63 x 40 x 63, 63 x 50 x 63, 75 x 50 x 75, 75 x 63 x 75, 110 x 63 x 110, 110 x 75 x 110, 110 x 90 x 110, 90 x 63 x 90, 90 x 75 x 90",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 10,
       name: "Union rapida reducida",
       image: unionRapidaReducida,
-      sizes: "3/4\" x 1/2\", 1\" x 3/4\", 1 1/4\" x 1\"",
-      pressure: "10-16 bar",
-      applications: "Adaptación de diámetros, Sistemas mixtos",
+      sizes: "25x20, 32x20, 32x25, 40x20, 40x25, 40x32, 50x25, 50x32, 50x40, 63x25, 63x32, 63x40, 63x50, 75x50, 75x63, 90x63, 90x75, 110x63, 110x75, 110x90",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 11,
       name: "Llave para accesorios y adaptadores",
       image: llaveAccesorios,
-      sizes: "Universal",
-      pressure: "N/A",
-      applications: "Instalación y mantenimiento de accesorios",
+      sizes: "20, 25, 32, 40, 50, 63, 75, 90, 110",
+      pressure: "Ø 20 mm – Ø 110 mm : PN 16",
+      applications: "Redes urbanas de agua potable, Sistema de paisajismo, Riego agrícola, Invernaderos",
     },
     {
       id: 12,
       name: "Collar de derivacion con perno y anillo de refuerzo galvanizado",
       image: collar,
-      sizes: "50mm, 63mm, 75mm, 90mm, 110mm",
-      pressure: "10-16 bar",
-      applications: "Derivaciones en tubería principal, Riego agrícola",
+      sizes: "25 x 1/2\", 25 x 3/4\", 32 x 1/2\", 32 x 3/4\", 32 x 1\", 40 x 1/2\", 40 x 3/4\", 40 x 1\", 50 x 1/2\", 50 x 3/4\", 50 x 1\", 50 x 1 1/4\", 63 x 1/2\", 63 x 3/4\", 63 x 1\", 63 x 1 1/4\", 63 x 1 1/2\", 75 x 1/2\", 75 x 3/4\", 75 x 1\", 75 x 1 1/4\", 75 x 1 1/2\", 75 x 2\", 90 x 1/2\", 90 x 3/4\", 90 x 1\", 90 x 1 1/4\", 90 x 1 1/2\", 90 x 2\", 110 x 1/2\", 110 x 3/4\", 110 x 1\", 110 x 1 1/4\", 110 x 1 1/2\", 110 x 2\"",
+      pressure: "No info",
+      applications: "No info",
     },
     {
       id: 13,
       name: "Valvula de bola rapida/hembra npt",
       image: valvularapida,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
-      pressure: "16 bar",
-      applications: "Control de flujo, Sistemas de riego",
+      sizes: "20 x 1/2\", 25 x 3/4\", 32 x 1\", 40 x 1 1/4\", 50 x 1 1/2\", 63 x 2\"",
+      pressure: "½” – ¾” – 1“ – 1 ¼” – 1 ½” – 2“ : PN 10, 2 ½” – 3“ – 4” : PN 6 ",
+      applications: "Sistema de jardinería, Riego agrícola",
     },
     {
       id: 14,
       name: "Valvula de bola conexion rapida",
       image: valvulaBolaConexionRapida,
-      sizes: "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\"",
+      sizes: "20 x 20, 25 x 25, 32 x 32, 40 x 40, 50 x 50, 63 x 63",
       pressure: "16 bar",
-      applications: "Apertura/cierre rápido, Riego por aspersión",
+      applications: "Apertura y cierre rápido, Riego por aspersión",
     },
     {
       id: 15,
       name: "Valvula de acoplamiento rapido con llave (hidrante + Bayoneta)",
       image: valvulaAcoplamiento,
-      sizes: "2\", 2 1/2\", 3\"",
-      pressure: "10-16 bar",
-      applications: "Hidrantes, Sistemas contra incendios",
+      sizes: "3/4\"",
+      pressure: "PN 6",
+      applications: "Sistemas paisajisticos, Riego agrícola, Instalaciones Deportivas",
     },
     {
       id: 16,
       name: "Filtro plastico de disco",
       image: filtroDisco,
-      sizes: "1\", 1 1/4\", 1 1/2\", 2\"",
-      pressure: "10 bar",
-      applications: "Filtración de agua, Riego por goteo",
+      sizes: "3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
+      pressure: "PN 10",
+      applications: "Sistemas paisajisticos, Riego agrícola",
     },
     {
       id: 17,
       name: "Filtro plastico de anillo",
       image: filtroAnillo,
-      sizes: "1\", 1 1/4\", 1 1/2\", 2\"",
-      pressure: "10 bar",
-      applications: "Filtración avanzada, Sistemas de goteo",
+      sizes: "3/4\", 1\", 1 1/4\", 1 1/2\", 2\"",
+      pressure: "PN 10",
+      applications: "Sistemas paisajisticos, Riego agrícola",
     },
     {
       id: 18,
       name: "Union interna",
       image: unionInterna,
-      sizes: "16mm, 20mm",
-      pressure: "6 bar",
-      applications: "Riego por goteo, Microirrigación",
+      sizes: "16 x 16",
+      pressure: "Contacte para mas información",
+      applications: "Sistemas paisajisticos, Riego agrícola, Invernaderos",
     },
     {
       id: 19,
       name: "Racor macho",
       image: racorMacho,
-      sizes: "16mm x 1/2\", 16mm x 3/4\"",
-      pressure: "6 bar",
-      applications: "Conexiones con rosca, Goteo",
+      sizes: "16 x 1/2\", 16 x 3/4\"",
+      pressure: "Contacte para mas información",
+      applications: "Sistemas paisajisticos, Riego agrícola, Invernaderos",
     },
     {
       id: 20,
       name: "Tee interna 16MM",
       image: teeInterna,
-      sizes: "16mm",
-      pressure: "6 bar",
-      applications: "Derivaciones en goteo, Microirrigación",
+      sizes: "16x16x16",
+      pressure: "Contacte para mas información",
+      applications: "Sistemas paisajisticos, Riego agrícola, InvernaderosS",
     },
     {
       id: 21,
       name: "Codo interno 16mm",
       image: codoInterno,
-      sizes: "16mm",
-      pressure: "6 bar",
-      applications: "Cambios de dirección en goteo",
+      sizes: "16x16",
+      pressure: "Contacte para mas información",
+      applications: "Sistemas paisajisticos, Riego agrícola, Invernaderos",
     },
     {
       id: 22,
       name: "Conector inicial con silleta",
       image: conectorInicial,
-      sizes: "16mm",
-      pressure: "6 bar",
-      applications: "Inicio de líneas de goteo",
+      sizes: "16x16",
+      pressure: "Contacte para mas información",
+      applications: "Sistemas paisajisticos, Riego agrícola, Invernaderos",
     },
     {
       id: 23,
       name: "Obturador Final 16mm",
       image: obturadorFinal,
-      sizes: "16mm",
-      pressure: "6 bar",
-      applications: "Cierre de líneas de goteo",
+      sizes: "16, 20",
+      pressure: "Contacte para mas información",
+      applications: "Sistemas paisajisticos, Riego agrícola, Invernaderos",
     },
   ];
 
@@ -325,18 +333,38 @@ const AccesoriosPoelsan = () => {
               />
             </div>
             <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Tamaños disponibles</h4>
-                <p className="text-muted-foreground">{selectedProduct?.sizes}</p>
-              </div>
+              {selectedProduct?.sizes && (
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Tamaños disponibles</h4>
+                  <ul className="list-disc list-inside space-y-1 text-muted-foreground max-h-48 overflow-y-auto pr-2">
+                    {selectedProduct.sizes
+                      .split(",")
+                      .map((size) => size.trim())
+                      .filter(Boolean)
+                      .map((size, index) => (
+                        <li key={index}>{size}</li>
+                      ))}
+                  </ul>
+                </div>
+              )}
               <div>
                 <h4 className="font-semibold text-lg mb-2">Presión de trabajo</h4>
                 <p className="text-muted-foreground">{selectedProduct?.pressure}</p>
               </div>
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Áreas de instalación</h4>
-                <p className="text-muted-foreground">{selectedProduct?.applications}</p>
-              </div>
+              {selectedProduct?.applications && (
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Áreas de instalación</h4>
+                  <ul className="list-disc list-inside space-y-1 text-muted-foreground max-h-48 overflow-y-auto pr-2">
+                    {selectedProduct.applications
+                      .split(",")
+                      .map((application) => application.trim())
+                      .filter(Boolean)
+                      .map((application, index) => (
+                        <li key={index}>{application}</li>
+                      ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </DialogContent>

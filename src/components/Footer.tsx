@@ -60,7 +60,7 @@ const Footer = () => {
                   className="flex items-center space-x-2 text-base text-brand-gray hover:text-primary transition-colors"
                 >
                   <Phone className="h-5 w-5" />
-                  <span>317 439 9679</span>
+                  <span>310 600 1692</span>
                 </a>
               </li>
               <li>
@@ -91,7 +91,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Redes Sociales</h3>
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/acquapack_/"
+                href="https://www.instagram.com/acquapack_aqp/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-white transition-colors"

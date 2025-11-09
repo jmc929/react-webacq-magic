@@ -24,27 +24,36 @@ const Contacto = () => {
     e.preventDefault();
     try {
       setLoading(true);
-  
-      // 1) Usa text/plain para que sea "simple request" y evite preflight CORS
-      const res = await fetch("https://script.google.com/macros/s/AKfycbx2U730vtLDoX3H8h6g46sjYVvkUVeGyXRmG9zkeNvjPeOQnUzJsOWM40nvO5neHQyS/exec", {
+
+      const res = await fetch("https://formspree.io/f/mwpaeqaj", {
         method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          company: "" // honeypot
         }),
       });
-  
-      // 2) Apps Script a veces devuelve HTML si algo falla.
-      //    Lee como texto y trata de parsear JSON.
-      const text = await res.text();
+
       let json: any = {};
-      try { json = JSON.parse(text); } catch { json = { ok: res.ok }; }
-  
-      if (!json.ok) throw new Error(json.error || "No se pudo enviar");
+      try {
+        json = await res.json();
+      } catch {
+        json = {};
+      }
+
+      const errorMessage =
+        json?.errors?.[0]?.message ||
+        json?.error ||
+        (!res.ok ? "No se pudo enviar" : null);
+
+      if (errorMessage) {
+        throw new Error(errorMessage);
+      }
   
       toast({ title: "Mensaje enviado", description: "Gracias por escribirnos." });
       setFormData({ name: "", email: "", phone: "", message: "" });
@@ -222,7 +231,7 @@ const Contacto = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <a
-                    href="https://www.instagram.com/acquapack_/"
+                    href="https://www.instagram.com/acquapack_aqp/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors"

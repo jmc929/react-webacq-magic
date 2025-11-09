@@ -114,21 +114,21 @@ const Catalogo = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-4xl font-bold text-foreground">Marcas Certificadas</h2>
+            <h2 className="text-4xl font-bold text-foreground">Marcas de Calidad</h2>
             <p className="text-xl text-muted-foreground">
-              Trabajamos con las marcas más reconocidas del mercado: <strong>WIPLAS</strong>,{" "}
-              <strong>POELSAN</strong> y <strong>Altamira Water</strong>, garantizando productos
-              de la más alta calidad y durabilidad.
+              Trabajamos con marcas reconocidas como <strong>WIPLAS</strong>,{" "}
+              <strong>POELSAN</strong> y <strong>Altamira Water</strong>, ofreciendo productos
+              de excelente calidad y durabilidad para satisfacer las necesidades de nuestros clientes.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Badge variant="outline" className="text-base px-4 py-2">
-                Certificación ISO
+                Excelente calidad
               </Badge>
               <Badge variant="outline" className="text-base px-4 py-2">
-                Garantía de fábrica
+                Durabilidad
               </Badge>
               <Badge variant="outline" className="text-base px-4 py-2">
-                Soporte técnico
+                Garantía
               </Badge>
             </div>
           </div>

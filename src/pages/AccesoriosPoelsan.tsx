@@ -260,7 +260,7 @@ const AccesoriosPoelsan = () => {
 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="mb-8 flex items-center justify-between gap-4">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <Button asChild variant="outline">
               <Link to="/catalogo">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -268,7 +268,7 @@ const AccesoriosPoelsan = () => {
               </Link>
             </Button>
             
-            <div className="relative flex-1 max-w-md">
+            <div className="relative w-full sm:flex-1 sm:max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="text"
@@ -320,51 +320,57 @@ const AccesoriosPoelsan = () => {
       </section>
 
       <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="max-w-4xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">{selectedProduct?.name}</DialogTitle>
-          </DialogHeader>
-          <div className="grid md:grid-cols-2 gap-6 mt-4">
-            <div className="flex items-center justify-center bg-muted rounded-lg p-4">
-              <img
-                src={selectedProduct?.image}
-                alt={selectedProduct?.name}
-                className="max-h-64 object-contain"
-              />
-            </div>
-            <div className="space-y-4">
-              {selectedProduct?.sizes && (
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">Tamaños disponibles</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground max-h-48 overflow-y-auto pr-2">
-                    {selectedProduct.sizes
-                      .split(",")
-                      .map((size) => size.trim())
-                      .filter(Boolean)
-                      .map((size, index) => (
-                        <li key={index}>{size}</li>
-                      ))}
-                  </ul>
-                </div>
-              )}
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Presión de trabajo</h4>
-                <p className="text-muted-foreground">{selectedProduct?.pressure}</p>
+        <DialogContent className="w-full max-w-[calc(100vw-2rem)] sm:max-w-3xl lg:max-w-4xl p-4 sm:p-6">
+          <div className="flex max-h-[calc(100vh-6rem)] flex-col gap-4">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-semibold sm:text-2xl">{selectedProduct?.name}</DialogTitle>
+            </DialogHeader>
+            <div className="grid flex-1 gap-6 overflow-y-auto md:grid-cols-2 md:pr-2">
+              <div className="flex items-center justify-center rounded-lg bg-muted p-4">
+                <img
+                  src={selectedProduct?.image}
+                  alt={selectedProduct?.name}
+                  className="max-h-[45vh] w-full object-contain"
+                />
               </div>
-              {selectedProduct?.applications && (
+              <div className="space-y-4">
+                {selectedProduct?.sizes && (
+                  <div>
+                    <h4 className="mb-2 text-lg font-semibold">Tamaños disponibles</h4>
+                    <ul className="max-h-48 list-disc list-inside space-y-1 overflow-y-auto pr-1 text-sm text-muted-foreground">
+                      {selectedProduct.sizes
+                        .split(",")
+                        .map((size) => size.trim())
+                        .filter(Boolean)
+                        .map((size, index) => (
+                          <li key={index}>
+                            {size}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
                 <div>
-                  <h4 className="font-semibold text-lg mb-2">Áreas de instalación</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground max-h-48 overflow-y-auto pr-2">
-                    {selectedProduct.applications
-                      .split(",")
-                      .map((application) => application.trim())
-                      .filter(Boolean)
-                      .map((application, index) => (
-                        <li key={index}>{application}</li>
-                      ))}
-                  </ul>
+                  <h4 className="mb-2 text-lg font-semibold">Presión de trabajo</h4>
+                  <p className="text-sm text-muted-foreground">{selectedProduct?.pressure}</p>
                 </div>
-              )}
+                {selectedProduct?.applications && (
+                  <div>
+                    <h4 className="mb-2 text-lg font-semibold">Áreas de instalación</h4>
+                    <ul className="max-h-48 list-disc list-inside space-y-1 overflow-y-auto pr-1 text-sm text-muted-foreground">
+                      {selectedProduct.applications
+                        .split(",")
+                        .map((application) => application.trim())
+                        .filter(Boolean)
+                        .map((application, index) => (
+                          <li key={index}>
+                            {application}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </DialogContent>

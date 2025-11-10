@@ -157,7 +157,7 @@ const Servicios = () => {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">¿Listo para comenzar tu proyecto?</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 opacity-90 text-center">
             Nuestro equipo está preparado para brindarte la mejor solución
           </p>
           <Button asChild size="lg" variant="secondary">

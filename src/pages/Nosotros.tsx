@@ -22,7 +22,7 @@ const Nosotros = () => {
                 style={{ transform: 'scale(2.3)' }}
               />
             </div>
-            <p className="text-2xl md:text-3xl opacity-90">
+            <p className="text-2xl md:text-3xl opacity-90 text-center">
               Somos líderes en soluciones de tuberías para el sector agrícola, industrial y minero
             </p>
           </div>
@@ -53,7 +53,7 @@ const Nosotros = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
-            Nuestros Valores
+            Direccionamiento Estratégico
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="p-8 text-center space-y-4 hover:shadow-lg transition-shadow">

@@ -139,7 +139,7 @@ const Catalogo = () => {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">¿Necesitas una cotización personalizada?</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 opacity-90 text-center">
             Contáctanos y te ayudaremos a encontrar los productos perfectos para tu proyecto
           </p>
           <Button asChild size="lg" variant="secondary">

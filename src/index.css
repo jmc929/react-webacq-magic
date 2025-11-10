@@ -118,6 +118,10 @@ All colors MUST be HSL.
     font-size: 18px;
     line-height: 1.7;
   }
+
+  p {
+    text-align: justify;
+  }
   
   html {
     scroll-behavior: smooth;

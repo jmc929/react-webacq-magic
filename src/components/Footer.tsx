@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { Instagram, MapPin, Phone, Mail, MessageCircle, Facebook, Linkedin } from "lucide-react";
 import logo from "@/assets/Logo_acquapack_sin_fondo_gota.png";
 
 const Footer = () => {
@@ -98,6 +98,24 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1ADWxccheU/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/acquapack-aqp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-6 w-6" />
               </a>
               <a
                 href="https://wa.link/dgtbl9"

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, Instagram, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, MessageCircle, Facebook, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import WaveSection from "@/components/WaveSection";
@@ -216,7 +216,9 @@ const Contacto = () => {
                     <div className="text-base">
                       <p className="font-medium text-foreground">Horario</p>
                       <p className="text-muted-foreground">
-                        Lunes a Viernes: 8:00 AM - 6:00 PM
+                        Lunes a Jueves: 8:00 AM - 5:30 PM
+                        <br />
+                        Viernes: 8:00 AM - 5:00 PM
                         <br />
                         Sábados: 8:00 AM - 12:00 PM
                       </p>
@@ -242,6 +244,36 @@ const Contacto = () => {
                     <div className="text-base">
                       <p className="font-medium text-foreground">Instagram</p>
                       <p className="text-muted-foreground">@acquapack_</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/share/1ADWxccheU/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors"
+                  >
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Facebook className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="text-base">
+                      <p className="font-medium text-foreground">Facebook</p>
+                      <p className="text-muted-foreground">/acquapackcolombia</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/company/acquapack-aqp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-secondary transition-colors"
+                  >
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Linkedin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="text-base">
+                      <p className="font-medium text-foreground">LinkedIn</p>
+                      <p className="text-muted-foreground">ACQUAPACK S.A.S</p>
                     </div>
                   </a>
 
